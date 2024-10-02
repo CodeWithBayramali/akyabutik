@@ -29,7 +29,7 @@ export default function OpenCartModal({ isOpen, closeModal }: { isOpen: boolean;
     >
       {/* Modal İçeriği */}
       <div
-        className={`w-80 h-full bg-opacity-70 backdrop-blur-lg bg-white shadow-lg rounded-l-3xl transform transition-transform duration-300 ease-in-out ${
+        className={`w-80 h-full bg-opacity-70 backdrop-blur-md bg-white shadow-lg rounded-l-3xl transform transition-transform duration-300 ease-in-out ${
           isOpen && !isClosing ? 'translate-x-0' : 'translate-x-full'
         } relative`}
       >

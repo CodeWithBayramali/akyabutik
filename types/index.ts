@@ -3,7 +3,7 @@ export type Product = {
     name: String;
     price: Number;
     category: String;
-    color:[],
+    colors:[],
     sex: String;
     slug: String;
     images: String[];

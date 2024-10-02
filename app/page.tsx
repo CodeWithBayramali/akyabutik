@@ -1,8 +1,21 @@
+'use client'
 import MainCarousel from "components/common/main-carousel";
 import ProductCard from "components/product-card";
 import Image from "next/image";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllProductDispatch } from "../redux/productSlice";
+import { Product } from "types";
 
 export default function Home() {
+
+  const dispatch = useDispatch()
+  const {products} = useSelector((state:any)=> state.product)
+
+  useEffect(()=> {
+    dispatch(getAllProductDispatch())
+  },[dispatch])
+
   return (
     <>
       <img
@@ -11,14 +24,11 @@ export default function Home() {
         className="w-full md:h-[600px] brightness-90 sm:h-[500px] object-fill rounded-b-3xl"
       />
       <div className="container my-12 grid md:grid-cols-4 sm:grid-cols-1 md:gap-6 sm:gap-y-6 flex-wrap">
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        {
+          products.map((item:Product,index:Number)=> (
+            <ProductCard product={item} />
+          ))
+        }
       </div>
       <div className="my-12 flex items-center justify-center">
         <button className="bg-blue-600 text-sm font-semibold p-2 text-white rounded-full px-4">

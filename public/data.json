@@ -1,0 +1,270 @@
+[
+    {
+        "id": 1,
+        "name": "Yeni Sezon Triko Ceket",
+        "price": 1299.50,
+        "category": "ust-giyim",
+        "size": [
+            {
+                "size":"SM",
+                "count": 10
+            },
+            {
+                "size":"MD",
+                "count": 10
+            },
+            {
+                "size":"LG",
+                "count": 10
+            },
+            {
+                "size":"XL",
+                "count": 10
+            },
+            {
+                "size":"XXL",
+                "count": 10
+            }
+        ],
+        "colors": [
+            {
+                "color": "black",
+                "count": 10
+            },
+            {
+                "color": "white",
+                "count": 10
+            },
+            {
+                "color": "blue",
+                "count": 10
+            }
+        ],
+        "images": [
+            {
+                "url": "https://monannee.co/cdn/shop/files/11copy_604a27f0-0a41-48cf-a3a6-06d8c85e43f0.jpg?v=1724789691&width=600"
+            },
+            {
+                "url": "https://monannee.co/cdn/shop/files/MONANNEE11712.jpg?v=1724789691"
+            },
+            {
+                "url": "https://monannee.co/cdn/shop/files/1-MONANNEE11688.jpg?v=1724789691"
+            }
+        ]
+    },
+
+    {
+        "id": 2,
+        "name": "Yeniz Sözon Gömlek",
+        "price": 600.00,
+        "category": "ust-giyim",
+        "size": [
+            {
+                "size":"SM",
+                "count": 10
+            },
+            {
+                "size":"MD",
+                "count": 10
+            },
+            {
+                "size":"LG",
+                "count": 10
+            },
+            {
+                "size":"XL",
+                "count": 10
+            },
+            {
+                "size":"XXL",
+                "count": 10
+            }
+        ],
+        "colors": [
+            {
+                "color": "black",
+                "count": 10
+            },
+            {
+                "color": "white",
+                "count": 10
+            },
+            {
+                "color": "blue",
+                "count": 10
+            }
+        ],
+        "images": [
+            {
+                "url": "https://monannee.co/cdn/shop/files/17copy_b6803f96-f4cf-4594-87e6-985c306c4217.jpg?v=1724789716&width=600"
+            },
+            {
+                "url": "https://monannee.co/cdn/shop/files/MONANNEE11646_582d346d-3c14-4cd5-8fe7-5803e824cc20.jpg?v=1724789716"
+            },
+            {
+                "url": "https://monannee.co/cdn/shop/files/1-MONANNEE11633_85c02c73-01c4-4408-89ac-5248d4a952d8.jpg?v=1724789716"
+            }
+        ]
+    },
+
+    {
+        "id": 3,
+        "name": "Keten Pantolon",
+        "price": 970.00,
+        "category": "alt-giyim",
+        "size": [
+            {
+                "size":"SM",
+                "count": 10
+            },
+            {
+                "size":"MD",
+                "count": 10
+            },
+            {
+                "size":"LG",
+                "count": 10
+            },
+            {
+                "size":"XL",
+                "count": 10
+            },
+            {
+                "size":"XXL",
+                "count": 10
+            }
+        ],
+        "colors": [
+            {
+                "color": "black",
+                "count": 10
+            },
+            {
+                "color": "white",
+                "count": 10
+            },
+            {
+                "color": "blue",
+                "count": 10
+            }
+        ],
+        "images": [
+            {
+                "url": "https://monannee.co/cdn/shop/files/33copy_f9eb1a55-6226-4f09-8098-90d2d45c85e4.jpg?v=1724789711&width=600"
+            },
+            {
+                "url": "https://monannee.co/cdn/shop/files/MONANNEE11817copy_04fed2ac-f57a-4843-bea7-05fc46d01989.jpg?v=1724789711&width=600"
+            },
+            {
+                "url": "https://monannee.co/cdn/shop/files/MONANNEE11810_95bca196-002d-4ebb-98f6-10f1671d553e.jpg?v=1724789711&width=600"
+            }
+        ]
+    },
+
+    {
+        "id": 4,
+        "name": "Yeni Sezon Triko Ceket",
+        "price": 1299.50,
+        "category": "ust-giyim",
+        "size": [
+            {
+                "size":"SM",
+                "count": 10
+            },
+            {
+                "size":"MD",
+                "count": 10
+            },
+            {
+                "size":"LG",
+                "count": 10
+            },
+            {
+                "size":"XL",
+                "count": 10
+            },
+            {
+                "size":"XXL",
+                "count": 10
+            }
+        ],
+        "colors": [
+            {
+                "color": "black",
+                "count": 10
+            },
+            {
+                "color": "white",
+                "count": 10
+            },
+            {
+                "color": "blue",
+                "count": 10
+            }
+        ],
+        "images": [
+            {
+                "url": "https://monannee.co/cdn/shop/files/11copy_604a27f0-0a41-48cf-a3a6-06d8c85e43f0.jpg?v=1724789691&width=600"
+            },
+            {
+                "url": "https://monannee.co/cdn/shop/files/MONANNEE11712.jpg?v=1724789691"
+            },
+            {
+                "url": "https://monannee.co/cdn/shop/files/1-MONANNEE11688.jpg?v=1724789691"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Yeni Sezon Triko Ceket",
+        "price": 1299.50,
+        "category": "ust-giyim",
+        "size": [
+            {
+                "size":"SM",
+                "count": 10
+            },
+            {
+                "size":"MD",
+                "count": 10
+            },
+            {
+                "size":"LG",
+                "count": 10
+            },
+            {
+                "size":"XL",
+                "count": 10
+            },
+            {
+                "size":"XXL",
+                "count": 10
+            }
+        ],
+        "colors": [
+            {
+                "color": "black",
+                "count": 10
+            },
+            {
+                "color": "white",
+                "count": 10
+            },
+            {
+                "color": "blue",
+                "count": 10
+            }
+        ],
+        "images": [
+            {
+                "url": "https://monannee.co/cdn/shop/files/11copy_604a27f0-0a41-48cf-a3a6-06d8c85e43f0.jpg?v=1724789691&width=600"
+            },
+            {
+                "url": "https://monannee.co/cdn/shop/files/MONANNEE11712.jpg?v=1724789691"
+            },
+            {
+                "url": "https://monannee.co/cdn/shop/files/1-MONANNEE11688.jpg?v=1724789691"
+            }
+        ]
+    }
+]

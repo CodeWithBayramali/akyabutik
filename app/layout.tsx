@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import {Poppins} from "next/font/google";
 import "./globals.css";
-import Navbar from "components/common/navbar";
-import Footer from "components/common/footer";
-import BackToTop from "components/common/back-to-top";
 import Root from "./root";
 
 const poppins = Poppins({
@@ -27,7 +24,7 @@ export default function RootLayout({
       <body
         className={`${poppins.className} antialiased`}
       >
-        <Root children={children} />
+          <Root children={children} />
       </body>
     </html>
   );

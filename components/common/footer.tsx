@@ -24,7 +24,7 @@ export default function Footer() {
             height={100}
           />
           <h1 className={`${dancing_script.className} text-4xl`}>Akya Butik</h1>
-          <p className="max-w-64 text-lg text-center">
+          <p className="max-w-64 text-sm text-center">
             Erenköy Mah. 4875 sok. no:78 7 nolu dükkan (B) KEPEZ / ANTALYA
           </p>
         </ul>
