@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import {Poppins} from "next/font/google";
+import {Montserrat} from "next/font/google";
 import "./globals.css";
 import Root from "./root";
 
-const poppins = Poppins({
+const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["400", "300", "500", "600", "700", "100", "200"],
   display: "swap",
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} antialiased`}
+        className={`${montserrat.className} antialiased`}
       >
           <Root children={children} />
       </body>

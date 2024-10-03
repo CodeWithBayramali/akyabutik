@@ -2,7 +2,7 @@ import React from "react";
 
 export default function page() {
   return (
-    <div className="container sm:64 md:my-32 sm:my-32">
+    <div className="container md:my-32 sm:my-32">
       <h1 className="text-2xl text-gray font-bold">
         Kişisel Verilerin Korunmasına İlişkin Bilgilendirme;
       </h1>

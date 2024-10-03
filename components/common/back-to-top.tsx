@@ -42,7 +42,7 @@ export default function BackToTop() {
       onClick={scrollToTop}
       aria-label="Back to top"
       title="Back to top"
-      className="fixed bottom-4 right-2 z-10 bg-indigo-600 group w-[40px] h-[40px] rounded-full flex items-center justify-center shadow-back-to-top opacity-0 invisible"
+      className="fixed bottom-12 right-12 z-10 bg-indigo-600 group w-[40px] h-[40px] rounded-full flex items-center justify-center shadow-back-to-top opacity-0 invisible"
     >
       <FaArrowUpLong color="white" />
     </div>

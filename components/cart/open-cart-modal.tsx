@@ -23,13 +23,13 @@ export default function OpenCartModal({ isOpen, closeModal }: { isOpen: boolean;
     <div
       id="modal-overlay"
       onClick={handleOutsideClick}
-      className={`fixed inset-0 z-50 flex items-center justify-end transition-opacity duration-300 ease-in-out ${
+      className={`fixed inset-0 z-50 flex bg-black backdrop-opacity-25 items-center justify-end transition-opacity duration-300 ease-in-out ${
         isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
       } bg-opacity-50`}
     >
       {/* Modal İçeriği */}
       <div
-        className={`w-80 h-full bg-opacity-70 backdrop-blur-md bg-white shadow-lg rounded-l-3xl transform transition-transform duration-300 ease-in-out ${
+        className={`w-80 h-full bg-white shadow-lg rounded-l-3xl transform transition-transform duration-300 ease-in-out ${
           isOpen && !isClosing ? 'translate-x-0' : 'translate-x-full'
         } relative`}
       >

@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        "id": "1",
         "name": "Yeni Sezon Triko Ceket",
         "price": 1299.50,
         "category": "ust-giyim",
@@ -50,11 +50,12 @@
             {
                 "url": "https://monannee.co/cdn/shop/files/1-MONANNEE11688.jpg?v=1724789691"
             }
-        ]
+        ],
+        "description": "Keten karışımlı kumaştan beyaz çizgili açık mavi yelek. %65 keten, %35 Pamuk karışımlı kumaştan üretilmiştir. Önden iki bağcıklı, içinde keten ve pamuk karışımlı beyaz astar kullanılmıştır.  Manken Small beden giymektedir. Ürün ölçülerine beden ölçü tablomuzdan ulaşabilirsiniz. Ürünlerimiz İstanbul'da, tamamen lokal kaynaklar kullanılarak sürdürülebilirlik esasına dayalı olarak üretilmektedir."
     },
 
     {
-        "id": 2,
+        "id": "2",
         "name": "Yeniz Sözon Gömlek",
         "price": 600.00,
         "category": "ust-giyim",
@@ -104,11 +105,12 @@
             {
                 "url": "https://monannee.co/cdn/shop/files/1-MONANNEE11633_85c02c73-01c4-4408-89ac-5248d4a952d8.jpg?v=1724789716"
             }
-        ]
+        ],
+        "description": "Keten karışımlı kumaştan beyaz çizgili açık mavi yelek. %65 keten, %35 Pamuk karışımlı kumaştan üretilmiştir. Önden iki bağcıklı, içinde keten ve pamuk karışımlı beyaz astar kullanılmıştır.  Manken Small beden giymektedir. Ürün ölçülerine beden ölçü tablomuzdan ulaşabilirsiniz. Ürünlerimiz İstanbul'da, tamamen lokal kaynaklar kullanılarak sürdürülebilirlik esasına dayalı olarak üretilmektedir."
     },
 
     {
-        "id": 3,
+        "id": "3",
         "name": "Keten Pantolon",
         "price": 970.00,
         "category": "alt-giyim",
@@ -158,11 +160,12 @@
             {
                 "url": "https://monannee.co/cdn/shop/files/MONANNEE11810_95bca196-002d-4ebb-98f6-10f1671d553e.jpg?v=1724789711&width=600"
             }
-        ]
+        ],
+        "description": "Keten karışımlı kumaştan beyaz çizgili açık mavi yelek. %65 keten, %35 Pamuk karışımlı kumaştan üretilmiştir. Önden iki bağcıklı, içinde keten ve pamuk karışımlı beyaz astar kullanılmıştır.  Manken Small beden giymektedir. Ürün ölçülerine beden ölçü tablomuzdan ulaşabilirsiniz. Ürünlerimiz İstanbul'da, tamamen lokal kaynaklar kullanılarak sürdürülebilirlik esasına dayalı olarak üretilmektedir."
     },
 
     {
-        "id": 4,
+        "id": "4",
         "name": "Yeni Sezon Triko Ceket",
         "price": 1299.50,
         "category": "ust-giyim",
@@ -212,10 +215,11 @@
             {
                 "url": "https://monannee.co/cdn/shop/files/1-MONANNEE11688.jpg?v=1724789691"
             }
-        ]
+        ],
+        "description": "Keten karışımlı kumaştan beyaz çizgili açık mavi yelek. %65 keten, %35 Pamuk karışımlı kumaştan üretilmiştir. Önden iki bağcıklı, içinde keten ve pamuk karışımlı beyaz astar kullanılmıştır.  Manken Small beden giymektedir. Ürün ölçülerine beden ölçü tablomuzdan ulaşabilirsiniz. Ürünlerimiz İstanbul'da, tamamen lokal kaynaklar kullanılarak sürdürülebilirlik esasına dayalı olarak üretilmektedir."
     },
     {
-        "id": 5,
+        "id": "5",
         "name": "Yeni Sezon Triko Ceket",
         "price": 1299.50,
         "category": "ust-giyim",
@@ -265,6 +269,7 @@
             {
                 "url": "https://monannee.co/cdn/shop/files/1-MONANNEE11688.jpg?v=1724789691"
             }
-        ]
+        ],
+        "description": "Keten karışımlı kumaştan beyaz çizgili açık mavi yelek. %65 keten, %35 Pamuk karışımlı kumaştan üretilmiştir. Önden iki bağcıklı, içinde keten ve pamuk karışımlı beyaz astar kullanılmıştır.  Manken Small beden giymektedir. Ürün ölçülerine beden ölçü tablomuzdan ulaşabilirsiniz. Ürünlerimiz İstanbul'da, tamamen lokal kaynaklar kullanılarak sürdürülebilirlik esasına dayalı olarak üretilmektedir."
     }
 ]
