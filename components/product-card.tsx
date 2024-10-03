@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { Product } from "types";
 
+
 export default function ProductCard({product}: {product:Product}) {
   return (
     <div className="md:max-w-xs border p-2 rounded-lg sm:max-w-max overflow-hidden">

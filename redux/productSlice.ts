@@ -20,11 +20,11 @@ const productSlice = createSlice({
     }
 })
 
-export const getAllProductDispatch = () => async (dispatch: Dispatch) => {
+export const getAllProductDispatch = () => async (dispatch: AppDispatch) => {
    return dispatch(getProducts(data))
 }
 
-export const getProductDispatch = (id: String) => async (dispatch: Dispatch) => {
+export const getProductDispatch = (id: String) => async (dispatch: AppDispatch) => {
     const res = data.find(p => p.id === id.toString())
     dispatch(getProduct(res))
 }

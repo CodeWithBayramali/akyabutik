@@ -3,11 +3,12 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getProductDispatch } from '../../../redux/productSlice'
 import { FaMinus,FaPlus } from "react-icons/fa6";
+import { AppDispatch } from 'redux/store';
 
 
 export default function page({ params }: {params: {id: string}}) {
   
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<AppDispatch>()
   const {product} = useSelector((state:any) => state.product)
   const [count,setCount] = useState(1)
   useEffect(()=> {
@@ -15,7 +16,7 @@ export default function page({ params }: {params: {id: string}}) {
   },[dispatch])  
 
   const handleAddCart = () => {
-    
+
   }
 
   return (

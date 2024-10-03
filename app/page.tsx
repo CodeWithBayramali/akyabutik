@@ -6,10 +6,11 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProductDispatch } from "../redux/productSlice";
 import { Product } from "types";
+import { AppDispatch } from "redux/store";
 
 export default function Home() {
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<AppDispatch>()
   const {products} = useSelector((state:any)=> state.product)
 
   useEffect(()=> {

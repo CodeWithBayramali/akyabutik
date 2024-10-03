@@ -6,7 +6,7 @@ export type Product = {
     colors:[],
     sex: String;
     slug: String;
-    images: String[];
+    images: [{url:string}];
     description: String;
     size: {
         name: String;
