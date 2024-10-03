@@ -6,12 +6,12 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProductDispatch } from "../redux/productSlice";
 import { Product } from "types";
-import { AppDispatch } from "redux/store";
+import { AppDispatch, RootState } from "redux/store";
 
 export default function Home() {
 
   const dispatch = useDispatch<AppDispatch>()
-  const {products} = useSelector((state:any)=> state.product)
+  const {products} = useSelector((state:RootState)=> state.product)
 
   useEffect(()=> {
     dispatch(getAllProductDispatch())
@@ -26,8 +26,8 @@ export default function Home() {
       />
       <div className="container my-12 grid md:grid-cols-4 sm:grid-cols-1 md:gap-6 sm:gap-y-6 flex-wrap">
         {
-          products.map((item:Product,index:Number)=> (
-            <ProductCard product={item} />
+          products.map((item,index)=> (
+            <ProductCard key={index} product={item} />
           ))
         }
       </div>

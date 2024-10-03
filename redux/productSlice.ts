@@ -1,8 +1,6 @@
 import { AnyAction, createSlice, Dispatch, ThunkDispatch } from "@reduxjs/toolkit";
 import data from '../public/data.json'
 
-type AppDispatch = ThunkDispatch<any, any, AnyAction>
-
 const productSlice = createSlice({
     name: 'product',
     initialState: {
@@ -20,11 +18,11 @@ const productSlice = createSlice({
     }
 })
 
-export const getAllProductDispatch = () => async (dispatch: AppDispatch) => {
+export const getAllProductDispatch = () => async (dispatch: Dispatch) => {
    return dispatch(getProducts(data))
 }
 
-export const getProductDispatch = (id: String) => async (dispatch: AppDispatch) => {
+export const getProductDispatch = (id: String) => async (dispatch: Dispatch) => {
     const res = data.find(p => p.id === id.toString())
     dispatch(getProduct(res))
 }

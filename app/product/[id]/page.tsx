@@ -53,9 +53,10 @@ export default function page({ params }: {params: {id: string}}) {
         {/* PRODUCT CONTENT */}
      <div className='flex flex-col gap-y-6'>
         <h2 className='text-3xl'>{product.name}</h2>
-        <span className='flex flex-row justify-around'>
-        <p>{parseFloat(product.price).toFixed(2)}</p>
+        <span className='flex flex-row gap-x-3 justify-between items-center'>
+        <p className='line-through text-xl'>{parseFloat(product.price).toFixed(2)} TL</p>
         <p className='text-xl'>{parseFloat(product.price).toFixed(2)} TL</p>
+        <p className='bg-black text-white px-2 py-1 text-sm rounded-full'>İndirim</p>
         </span>
         
         <p className='text-xs text-gray-500'>Vergi dahildir. <span className='underline'>Kargo</span>, ödeme sayfasında hesaplanır.</p>

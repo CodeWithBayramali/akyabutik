@@ -10,7 +10,7 @@ export default function ProductCard({product}: {product:Product}) {
         <Link href={`/product/${product.id}`}>
         <img
           className="w-96 h-96 object-cover transition-transform hover:cursor-pointer duration-300 group-hover:scale-110"
-          src={product?.images[0]?.url}
+          src={product?.images[0]?.url.toString()}
           alt="Product Image"
         />
         </Link>
@@ -22,14 +22,14 @@ export default function ProductCard({product}: {product:Product}) {
         <div className="mt-2">
           <div className="flex space-x-2">
             {
-              product.size.map((item:any,index:any)=> (
-                <span className="px-1.5 py-1 border rounded-full text-xs">{item.size}</span>
+              product.size.map((item,index)=> (
+                <span key={index} className="px-1.5 py-1 border rounded-full text-xs">{item.size}</span>
               ))
             }
           </div>
           <div className="mt-2 flex space-x-2">
             {
-              product.colors.map((item:any,index:any)=> (
+              product.colors.map((item,index)=> (
                 item.color === 'white' ? (
                   <span key={index} className={`w-4 h-4 text-xs rounded-full bg-white border`}></span>
                 ) :
