@@ -4,8 +4,9 @@ import React, { useState } from 'react';
 export default function OpenCartModal({ isOpen, closeModal }: { isOpen: boolean; closeModal: Function; }) {
   const [isClosing, setIsClosing] = useState(false);
 
-  const handleOutsideClick = (e: any) => {
-    if (e.target.id === 'modal-overlay') {
+  const handleOutsideClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    const target = e.target as HTMLElement
+    if (target.id === 'modal-overlay') {
       startClosingAnimation();
     }
   };

@@ -3,20 +3,21 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getProductDispatch } from '../../../redux/productSlice'
 import { FaMinus,FaPlus } from "react-icons/fa6";
-import { AppDispatch } from 'redux/store';
-
+import { AppDispatch, RootState } from 'redux/store';
+import { Product } from 'types';
 
 export default function page({ params }: {params: {id: string}}) {
   
   const dispatch = useDispatch<AppDispatch>()
-  const {product} = useSelector((state:any) => state.product)
+  const { product }: {product: Product | null} = useSelector((state:RootState) => state.product)
   const [count,setCount] = useState(1)
+
   useEffect(()=> {
       dispatch(getProductDispatch(params.id))
   },[dispatch])  
 
-  const handleAddCart = () => {
-
+  if(!product) {
+    return <div className='h-screen bg-white text-blue-600'>Loading...</div>
   }
 
   return (
@@ -29,7 +30,7 @@ export default function page({ params }: {params: {id: string}}) {
          <div className="relative overflow-hidden group border flex items-center justify-center">
          <img
            className="w-96 h-full object-cover transition-transform hover:cursor-pointer duration-300 group-hover:scale-110"
-           src={product?.images[0]?.url}
+           src={product?.images[0]?.url.toString()}
            alt="Product Image"
          />
        </div>
@@ -38,8 +39,8 @@ export default function page({ params }: {params: {id: string}}) {
 
       <div className="grid grid-cols-2 gap-4 mt-4">
         {/* Diğer image'lar ikişerli olarak */}
-        {product?.images?.slice(1, product.images.length).map((item: any, index: any) => (
-         <div className="relative overflow-hidden group flex items-center justify-center">
+        {product?.images?.slice(1, product.images.length).map((item, index) => (
+         <div key={index} className="relative overflow-hidden group flex items-center justify-center">
          <img
            className="w-96 h-full object-cover transition-transform hover:cursor-pointer duration-300 group-hover:scale-110"
            src={item.url}
@@ -54,8 +55,8 @@ export default function page({ params }: {params: {id: string}}) {
      <div className='flex flex-col gap-y-6'>
         <h2 className='text-3xl'>{product.name}</h2>
         <span className='flex flex-row gap-x-3 justify-between items-center'>
-        <p className='line-through text-xl'>{parseFloat(product.price).toFixed(2)} TL</p>
-        <p className='text-xl'>{parseFloat(product.price).toFixed(2)} TL</p>
+        <p className='line-through text-xl'>{product.price.toFixed(2)} TL</p>
+        <p className='text-xl'>{product.price.toFixed(2)} TL</p>
         <p className='bg-black text-white px-2 py-1 text-sm rounded-full'>İndirim</p>
         </span>
         
@@ -63,8 +64,8 @@ export default function page({ params }: {params: {id: string}}) {
         <span>Size</span>
         <div className='flex gap-x-4 flex-row'>
           {
-            product?.size?.map((item:any,index:any)=> (
-              <button className='border rounded-full text-sm px-2.5 py-1'>{item.size}</button>
+            product?.size?.map((item,index)=> (
+              <button key={index} className='border rounded-full text-sm px-2.5 py-1'>{item.size}</button>
             ))
           }
         </div>

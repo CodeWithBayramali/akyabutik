@@ -5,11 +5,12 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProductDispatch } from '../../redux/productSlice';
 import { Product } from "types";
+import { AppDispatch, RootState } from "redux/store";
 
 
 export default function page() {
-  const dispatch = useDispatch()
-  const {products} = useSelector((state:any)=> state.product )
+  const dispatch = useDispatch<AppDispatch>()
+  const {products} : {products: Product[]} = useSelector((state:RootState)=> state.product )
 
   useEffect(()=> {
     dispatch(getAllProductDispatch())
@@ -23,8 +24,8 @@ export default function page() {
       <div className="flex-1">
         <div className="grid grid-cols-3 gap-4 flex-nowrap">
           {
-              products.map((item:any,index:any)=> (
-                <ProductCard product={item} />
+              products.map((item:Product,index:Number)=> (
+                <ProductCard key={parseInt(index.toFixed(2))} product={item} />
               ))
           }
         </div>

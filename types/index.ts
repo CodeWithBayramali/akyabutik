@@ -1,17 +1,17 @@
 export type Product = {
-    id: String;
-    name: String;
-    price: Number;
-    category: String;
-    colors: {color:String,count:Number}[],
-    sex: String;
-    slug: String;
-    images: {url:String}[];
-    description: String;
-    size: {size:String,count:Number}[];
+    id: string;
+    name: string;
+    price: number;
+    category: string;
+    colors: {color:string,count:number}[],
+    sex: string;
+    slug: string;
+    images: {url:string}[];
+    description: string;
+    size: {size:string,count:number}[];
 }
 
 export type Menu = {
-    title: String,
-    path: String
+    title: string,
+    path: string
 }

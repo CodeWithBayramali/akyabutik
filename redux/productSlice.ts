@@ -1,13 +1,20 @@
-import { AnyAction, createSlice, Dispatch, ThunkDispatch } from "@reduxjs/toolkit";
+import { createSlice, Dispatch } from "@reduxjs/toolkit";
 import data from '../public/data.json'
+import { Product } from "types";
+
+const initialState :{
+    products: Product[],
+    product: Product | null,
+    categoryProducts: Product[]
+} = {
+    products: [],
+    product: null,
+    categoryProducts: []
+}
 
 const productSlice = createSlice({
     name: 'product',
-    initialState: {
-        products: [],
-        product: {},
-        categoryProducts: [],
-    },
+    initialState,
     reducers: {
         getProducts: (state,action) => {
             state.products = action.payload
