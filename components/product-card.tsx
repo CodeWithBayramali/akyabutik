@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Product } from "types";
@@ -5,13 +6,16 @@ import { Product } from "types";
 
 export default function ProductCard({product}: {product:Product}) {
   return (
-    <div className="md:max-w-xs border p-2 rounded-lg sm:max-w-max overflow-hidden">
+    <div className="md:max-w-xs border p-2 rounded-lg sm:max-w-full overflow-hidden">
       <div className="relative overflow-hidden group">
         <Link href={`/product/${product.id}`}>
-        <img
-          className="w-96 h-96 object-cover transition-transform hover:cursor-pointer duration-300 group-hover:scale-110"
-          src={product?.images[0]?.url.toString()}
+        <Image
+          className="object-cover transition-transform hover:cursor-pointer duration-300 group-hover:scale-110"
+          src={`${product?.images[0]?.url}`}
           alt="Product Image"
+          width={600}
+          height={600}
+          layout="responsive"
         />
         </Link>
       </div>

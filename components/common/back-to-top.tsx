@@ -12,7 +12,7 @@ export default function BackToTop() {
 
     const isScrollingDown = () => {
       let scrollingDown = false;
-      let newScrollPosition = window.pageYOffset;
+      let newScrollPosition = window.scrollY;
       if (newScrollPosition > scrollPosition) {
         scrollingDown = true;
       }

@@ -20,8 +20,8 @@ export default function Footer() {
           <Image
             src="/images/akya-logo.png"
             alt="akya-logo.png"
-            width={100}
-            height={100}
+            width={150}
+            height={150}
           />
           <h1 className={`${dancing_script.className} text-4xl`}>Akya Butik</h1>
           <p className="max-w-64 text-sm text-center">

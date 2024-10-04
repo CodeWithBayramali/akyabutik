@@ -5,16 +5,17 @@ import { getProductDispatch } from '../../../redux/productSlice'
 import { FaMinus,FaPlus } from "react-icons/fa6";
 import { AppDispatch, RootState } from 'redux/store';
 import { Product } from 'types';
+import Image from 'next/image';
 
 export default function page({ params }: {params: {id: string}}) {
   
   const dispatch = useDispatch<AppDispatch>()
-  const { product }: {product: Product | null} = useSelector((state:RootState) => state.product)
+  const { product }: { product: Product | null } = useSelector((state:RootState) => state.product)
   const [count,setCount] = useState(1)
 
   useEffect(()=> {
       dispatch(getProductDispatch(params.id))
-  },[dispatch])  
+  },[dispatch,params.id])  
 
   if(!product) {
     return <div className='h-screen bg-white text-blue-600'>Loading...</div>
@@ -27,11 +28,13 @@ export default function page({ params }: {params: {id: string}}) {
      <div className="grid grid-cols-1 gap-4">
         {/* İlk image tam genişlikte */}
         {product?.images?.[0] && (
-         <div className="relative overflow-hidden group border flex items-center justify-center">
-         <img
-           className="w-96 h-full object-cover transition-transform hover:cursor-pointer duration-300 group-hover:scale-110"
+         <div className="relative h-[600px] w-full overflow-hidden group border flex items-center justify-center">
+         <Image
+           className="transition-transform hover:cursor-pointer duration-300 group-hover:scale-125"
            src={product?.images[0]?.url.toString()}
            alt="Product Image"
+           layout='fill'
+           objectFit='contain'
          />
        </div>
         )}
@@ -41,10 +44,14 @@ export default function page({ params }: {params: {id: string}}) {
         {/* Diğer image'lar ikişerli olarak */}
         {product?.images?.slice(1, product.images.length).map((item, index) => (
          <div key={index} className="relative overflow-hidden group flex items-center justify-center">
-         <img
-           className="w-96 h-full object-cover transition-transform hover:cursor-pointer duration-300 group-hover:scale-110"
+         <Image
+           className="object-cover transition-transform hover:cursor-pointer duration-300 group-hover:scale-110"
            src={item.url}
            alt="Product Image"
+           layout='responsive'
+           objectFit='cover'
+           width={300}
+           height={300}
          />
        </div>
         ))}
