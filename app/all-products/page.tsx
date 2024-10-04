@@ -24,7 +24,7 @@ export default function Page() {
       <div className="flex-1">
         <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-4 flex-nowrap">
           {
-              products.map((item:Product,index:Number)=> (
+              products.map((item:Product,index:number)=> (
                 <ProductCard key={parseInt(index.toFixed(2))} product={item} />
               ))
           }

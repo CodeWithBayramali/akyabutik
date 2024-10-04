@@ -12,9 +12,9 @@ export default function page() {
         müşterilerimiz aşağıdaki şartları kabul etmiş varsayılmaktadır:
       </p>
       <p className="text-sm text-gray-500 my-6">
-        Sitemizdeki web sayfaları ve ona bağlı tüm sayfalar (‘site’) Antalya
-        adresindeki Akya Butik firmasının (Firma) malıdır ve onun tarafından
-        işletilir. Sizler (‘Kullanıcı’) sitede sunulan tüm hizmetleri
+        Sitemizdeki web sayfaları ve ona bağlı tüm sayfalar ‘site’ Antalya
+        adresindeki Akya Butik firmasının Firma malıdır ve onun tarafından
+        işletilir. Sizler ‘Kullanıcı’ sitede sunulan tüm hizmetleri
         kullanırken aşağıdaki şartlara tabi olduğunuzu, sitedeki hizmetten
         yararlanmakla ve kullanmaya devam etmekle; Bağlı olduğunuz yasalara göre
         sözleşme imzalama hakkına, yetkisine ve hukuki ehliyetine sahip ve 18
@@ -119,8 +119,8 @@ export default function page() {
         Tarafların kontrolünde olmayan; tabii afetler, yangın, patlamalar, iç
         savaşlar, savaşlar, ayaklanmalar, halk hareketleri, seferberlik ilanı,
         grev, lokavt ve salgın hastalıklar, altyapı ve internet arızaları,
-        elektrik kesintisi gibi sebeplerden (aşağıda birlikte “Mücbir Sebep”
-        olarak anılacaktır.) dolayı sözleşmeden doğan yükümlülükler taraflarca
+        elektrik kesintisi gibi sebeplerden aşağıda birlikte “Mücbir Sebep”
+        olarak anılacaktır. dolayı sözleşmeden doğan yükümlülükler taraflarca
         ifa edilemez hale gelirse, taraflar bundan sorumlu değildir. Bu sürede
         Taraflar’ın işbu Sözleşme’den doğan hak ve yükümlülükleri askıya alınır.
       </p>

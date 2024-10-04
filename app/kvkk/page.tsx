@@ -8,10 +8,10 @@ export default function page() {
       </h1>
       <p className="text-gray-500 text-sm mt-4">
         Akya Butik olarak kişisel verilerinizin 6698 sayılı Kişisel Verilerin
-        Korunması Kanunu'na (“Kanun”) uygun olarak işlenerek, muhafaza
+        Korunması Kanunu na “Kanun” uygun olarak işlenerek, muhafaza
         edilmesine büyük önem veriyoruz. Müşterilerimizi kişisel verileri
         toplama, işleme, aktarma amacımız ve yöntemlerimiz ve buna bağlı olarak
-        sizlerin Kanun'dan kaynaklanan haklarınızla ilgili bilgilendirmek
+        sizlerin Kanun{`'`}dan kaynaklanan haklarınızla ilgili bilgilendirmek
         isteriz.
       </p>
       <h3 className="text-md font-bold my-2">
@@ -42,9 +42,9 @@ export default function page() {
         kontrol edilebilir, yeniden düzenlenebilir, sınıflandırılabilir,
         işlendikleri amaç için gerekli olan ya da ilgili kanunda öngörülen süre
         kadar muhafaza edilebilir, kanuni ya da hizmete bağlı fiili
-        gereklilikler halinde Voyant'ın birlikte çalıştığı özel-tüzel kişilerle
+        gereklilikler halinde Voyant ın birlikte çalıştığı özel-tüzel kişilerle
         ya da kanunen yükümlü olduğu kamu kurum ve kuruluşlarıyla ve/veya
-        Türkiye'de veya yurt dışında mukim olan ilgili 3. kişi gerçek kişi/tüzel
+        Türkiye{`'`}de veya yurt dışında mukim olan ilgili 3. kişi gerçek kişi/tüzel
         kişilerle paylaşılabilir/devredilebilir, kanuni ya da hizmete bağlı
         fiili gereklilikler halinde yurtdışına aktarılabilir. Voyant
         müşterilerinin markalarımızın hizmetlerinden faydalanabilmesi, onayınız
@@ -74,41 +74,41 @@ export default function page() {
         paylaşabilecektir.
       </p>
       <h3 className="text-md font-bold my-2">
-        4. Kişisel Veri Sahibinin KVK Kanunu'nun (“Kanun”)
+        4. Kişisel Veri Sahibinin KVK Kanunu{`'`}nun (“Kanun”)
       </h3>
       <p className="text-gray-500 text-sm">
         11.maddesinde Sayılan Hakları Akya Butik ilgili kişilerin aşağıdaki
-        taleplerine karşılık verecektir: a) Akya Butik’in kendilerine ilişkin
+        taleplerine karşılık verecektir: a - Akya Butik’in kendilerine ilişkin
         kişisel verileri işleyip işlemediğini ve hangi kişisel verileri
-        işlediğini öğrenme, b) İşleme faaliyetinin amaçlarına ilişkin bilgi
-        alma, c) Akya Butik'in yurt içinde veya yurt dışında kişisel verileri
-        aktardığı üçüncü kişileri bilme, d) Kişisel verilerin eksik veya yanlış
-        işlenmiş olması hâlinde bunların düzeltilmesini isteme, e) Kanun'a uygun
-        olarak kişisel verilerin silinmesini veya yok edilmesini isteme, f)
+        işlediğini öğrenme, b - İşleme faaliyetinin amaçlarına ilişkin bilgi
+        alma, c - Akya Butik{`'`}in yurt içinde veya yurt dışında kişisel verileri
+        aktardığı üçüncü kişileri bilme, d - Kişisel verilerin eksik veya yanlış
+        işlenmiş olması hâlinde bunların düzeltilmesini isteme, e - Kanun{`'`}a uygun
+        olarak kişisel verilerin silinmesini veya yok edilmesini isteme, f -
         Kişisel verilerin düzeltilmesi, silinmesi ya da yok edilmesi talebi
         halinde; yapılan işlemlerin, kişisel verilerin aktarıldığı üçüncü
-        kişilere bildirilmesini isteme, g) İşlenen verilerin münhasıran otomatik
+        kişilere bildirilmesini isteme, g - İşlenen verilerin münhasıran otomatik
         sistemler vasıtasıyla analiz edilmesi suretiyle kişinin kendisi aleyhine
-        bir sonucun ortaya çıkmasına itiraz etme ve h) Kişisel verilerinin birer
-        kopyasını alma.    Görüş ve sorularınızla ilgili bizimle iletişime
+        bir sonucun ortaya çıkmasına itiraz etme ve h - Kişisel verilerinin birer
+        kopyasını alma. Görüş ve sorularınızla ilgili bizimle iletişime
         geçebilirsiniz.
       </p>
       <h3 className="text-md font-bold my-2">Gizlilik ve Güvenlik</h3>
       <p className="text-gray-500 text-sm">
         Akya Butik, müşterilerine daha iyi hizmet verebilmek amacıyla bazı
-        kişisel bilgilerinizi (isim, yaş, ilgi alanlarınız, e-posta vb.)
+        kişisel bilgilerinizi isim, yaş, ilgi alanlarınız, e-posta vb.
         sizlerden talep etmektedir. Akya Butik sunucularında toplanan bu
         bilgiler, dönemsel kampanya çalışmaları, müşteri profillerine yönelik
         özel promosyon faaliyetlerinin kurgulanması ve istenmeyen e-postaların
-        iletilmemesine yönelik müşteri "sınıflandırma" çalışmalarında sadece
+        iletilmemesine yönelik müşteri sınıflandırma çalışmalarında sadece
         Akya Butik bünyesinde kullanılmaktadır. Akya Butik, üyelik formlarından
         topladığı bilgileri söz konusu üyenin haberi ya da aksi bir talimatı
         olmaksızın, üçüncü şahıslarla kesinlikle paylaşmamakta, faaliyet dışı
-        hiçbir nedenle ticari amaçla kullanmamakta ve de satmamaktadır. Müşteri
+        hiçbir nedenle ticari amaçla kullanmamakta ve de satmamaktadır. Müşteri
         bilgileri, ancak resmi makamlarca bu bilgilerin talep edilmesi halinde
         ve yürürlükteki emredici mevzuat hükümleri gereğince resmi makamlara
         açıklama yapmak zorunda olduğu durumlarda resmi makamlara
-        açıklanabilecektir. Müşterinin sisteme girdiği tüm bilgilere sadece
+        açıklanabilecektir. Müşterinin sisteme girdiği tüm bilgilere sadece
         müşteri ulaşabilmekte ve bu bilgileri sadece müşteri
         değiştirebilmektedir. Bir başkasının bu bilgilere ulaşması ve bunları
         değiştirmesi mümkün değildir. Ödeme sayfasında istenen kredi kartı
@@ -121,13 +121,13 @@ export default function page() {
       <h3 className="text-md font-bold my-2">Çerez Kullanımı</h3>
       <p className="text-gray-500 text-sm">
         Çerezler, sitemizi ziyaret ettiğinizde bilgisayarınız ya da mobil
-        cihazınıza (akıllı telefon veya tablet gibi) kaydedilen küçük metin
-        dosyaları ya da bilgilerdir.  Çerezleri, sitelerimizin daha kolay
+        cihazınıza akıllı telefon veya tablet gibi kaydedilen küçük metin
+        dosyaları ya da bilgilerdir. Çerezleri, sitelerimizin daha kolay
         kullanılması ve sizin ilgi ve ihtiyaçlarınıza göre ayarlanması için
         kullanıyoruz. İnternet siteleri bu çerez dosyaları okuyup yazabiliyorlar
         ve bu sayede tanınmanız ve size daha uygun bir internet sitesi sunulması
         amacıyla sizinle ilgili önemli bilgilerin hatırlanması sağlanıyor
-        (tercih ayarlarınızın hatırlanması gibi). Çerezler ayrıca, sitelerimiz
+        tercih ayarlarınızın hatırlanması gibi. Çerezler ayrıca, sitelerimiz
         üzerinde gelecekteki hareketlerinizin hızlanmasına da yardımcı olur.
         Bunlara ek olarak, ziyaretçilerin sitelerimizi nasıl kullandığını
         anlamak ve sitelerimizin tasarımını ve kullanışlılığını geliştirmek

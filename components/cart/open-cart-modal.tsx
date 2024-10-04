@@ -1,7 +1,12 @@
 'use client'
 import React, { useState } from 'react';
 
-export default function OpenCartModal({ isOpen, closeModal }: { isOpen: boolean; closeModal: Function; }) {
+interface OpenCartModalProps {
+  isOpen: boolean;
+  closeModal: () => void
+}
+
+export default function OpenCartModal({ isOpen, closeModal }: OpenCartModalProps) {
   const [isClosing, setIsClosing] = useState(false);
 
   const handleOutsideClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {

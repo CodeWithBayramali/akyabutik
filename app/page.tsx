@@ -10,7 +10,7 @@ import { AppDispatch, RootState } from "redux/store";
 
 export default function Home() {
   const dispatch = useDispatch<AppDispatch>();
-  const { products } = useSelector((state: RootState) => state.product);
+  const { products } : {products: Product[]} = useSelector((state: RootState) => state.product);
 
   useEffect(() => {
     dispatch(getAllProductDispatch());
