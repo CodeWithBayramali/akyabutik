@@ -7,7 +7,7 @@ import { AppDispatch, RootState } from 'redux/store';
 import { Product } from 'types';
 import Image from 'next/image';
 
-export default function page({ params }: {params: {id: string}}) {
+export default function ProductPage({ params }: {params: {id: string}}) {
   
   const dispatch = useDispatch<AppDispatch>()
   const { product }: { product: Product | null } = useSelector((state:RootState) => state.product)

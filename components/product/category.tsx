@@ -1,13 +1,16 @@
 "use client";
 import React, { useState } from "react";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import MobileMenuCategory from "./mobile-menu-category";
 
 export default function Category() {
   const [categoryOpenTab, setCategoryOpenTab] = useState("");
 
   return (
-    <div className="flex-none w-44">
-      <ul className="flex flex-col gap-y-2 text-gray-500">
+    <>
+    <MobileMenuCategory />
+    <div className="sm:hidden md:flex sticky top-24 w-44">
+      <ul className="flex md:flex-col sm:flex-row gap-y-2 text-gray-500">
         <li>
           <button className="text-sm">En Yeniler</button>
         </li>
@@ -73,5 +76,6 @@ export default function Category() {
         </li>
       </ul>
     </div>
+    </>
   );
 }

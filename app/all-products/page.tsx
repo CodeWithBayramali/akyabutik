@@ -8,7 +8,7 @@ import { Product } from "types";
 import { AppDispatch, RootState } from "redux/store";
 
 
-export default function page() {
+export default function Page() {
   const dispatch = useDispatch<AppDispatch>()
   const {products} : {products: Product[]} = useSelector((state:RootState)=> state.product )
 
@@ -17,12 +17,12 @@ export default function page() {
   },[dispatch])
 
   return (
-    <div className="container flex my-28">
-     <div className="sticky top-64">
+    <div className="container flex sm:flex-col md:flex-row my-28">
+     <div className="sticky md:top-64 sm:top-0">
      <Category />
      </div>
       <div className="flex-1">
-        <div className="grid grid-cols-3 gap-4 flex-nowrap">
+        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-4 flex-nowrap">
           {
               products.map((item:Product,index:Number)=> (
                 <ProductCard key={parseInt(index.toFixed(2))} product={item} />
