@@ -34,10 +34,10 @@ export default function ProductCard({product}: {product:Product}) {
           <div className="mt-2 flex space-x-2">
             {
               product.colors.map((item,index)=> (
-                item.color === 'white' ? (
+                item.color === 'WHITE' ? (
                   <span key={index} className={`w-4 h-4 text-xs rounded-full bg-white border`}></span>
                 ) :
-                  <span key={index} className={`w-4 h-4 text-xs rounded-full bg-${item.color}-600 border`}></span>
+                  <span key={index} className={`w-4 h-4 text-xs rounded-full bg-${item.color.toLowerCase()}-600 border`}></span>
               ))
             }
           </div>

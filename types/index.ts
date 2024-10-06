@@ -11,6 +11,13 @@ export type Product = {
     size: {size:string,count:number}[];
 }
 
+export type CartProduct = {
+    product: Product;
+    quantity: number,
+    color: string,
+    size: string
+}
+
 export type Menu = {
     title: string,
     path: string

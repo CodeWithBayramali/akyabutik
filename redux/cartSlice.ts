@@ -1,33 +1,57 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Product } from "types";
+import { CartProduct, Product } from "types";
+import { RiDeleteBinLine } from "react-icons/ri";
+
 
 interface CartState {
-    products: Product[]
-    quantity: number,
-    total: number
+  cartProducts: CartProduct[];
+  total: number;
 }
 const initialState: CartState = {
-    products: [],
-    quantity: 0,
-    total: 0,
-}
+  cartProducts: [],
+  total: 0,
+};
 
 const cartSlice = createSlice({
-    name: 'cart',
-    initialState,
-    reducers: {
-        addProduct: ( state, action ) => {
-            state.products.push(action.payload)
-            state.quantity += action.payload.quantity;
-            state.total += action.payload.price
-        },
-        reset: ( state, action) => {
-            state.products = [];
-            state.quantity = 0;
-            state.total = 0
-        }
-    }
-})
+  name: "cart",
+  initialState,
+  reducers: {
 
-export const {addProduct, reset} = cartSlice.actions;
+    addProduct: (state, action) => {
+      const existingProduct = state.cartProducts.find(
+        (p) => p.product.id === action.payload.product.id
+      );
+      if (existingProduct) {
+        existingProduct.quantity += 1;
+        state.total += existingProduct.product.price * action.payload.quantity;
+      } else {
+        state.cartProducts.push(action.payload);
+        state.total += action.payload.product.price * action.payload.quantity;
+      }
+    },
+
+    discountProduct: (state, action) => {
+      const existingProduct = state.cartProducts.find(
+        (p) => p.product.id === action.payload.product.id
+      );
+      if (existingProduct && existingProduct.quantity !== undefined) {
+        existingProduct.quantity -= 1;
+        state.total -= existingProduct.product.price;
+      }
+    },
+
+    removeProduct: (state,action) => {
+        const newProducts = state.cartProducts.filter(p=> p.product.id !== action.payload.product.id)
+        state.cartProducts = newProducts
+        
+    },
+
+    reset: (state, action) => {
+      state.cartProducts = [];
+      state.total = 0;
+    },
+  },
+});
+
+export const { addProduct, reset,removeProduct, discountProduct } = cartSlice.actions;
 export default cartSlice.reducer;
