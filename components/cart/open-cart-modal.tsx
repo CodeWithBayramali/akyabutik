@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { RootState } from "redux/store";
-import { CartProduct, Product } from "types";
+import { CartProduct } from "types";
 import CartProductCard from "./cart-product-card";
 
 interface OpenCartModalProps {
@@ -14,7 +14,6 @@ export default function OpenCartModal({
   isOpen,
   closeModal,
 }: OpenCartModalProps) {
-  const dispatch = useDispatch();
   const {
     cartProducts,
     total,

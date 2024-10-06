@@ -140,6 +140,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
             (item, index) =>
               (item.color === "WHITE" && (
                 <button
+                key={index}
                   onClick={() =>
                     setStateProduct({ ...stateProduct, color: "WHITE" })
                   }
@@ -148,6 +149,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
               )) ||
               (item.color === "BLACK" && (
                 <button
+                key={index}
                   onClick={() =>
                     setStateProduct({ ...stateProduct, color: "BLACK" })
                   }
@@ -155,6 +157,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                 ></button>
               )) || (
                 <button
+                key={index}
                   onClick={() =>
                     setStateProduct({ ...stateProduct, color: item.color })
                   }

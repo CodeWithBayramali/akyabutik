@@ -1,7 +1,7 @@
 'use client'
 import React from "react";
 import Image from "next/image";
-import { CartProduct, Product } from "types";
+import { CartProduct } from "types";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import { useDispatch } from "react-redux";
 import { RiDeleteBin5Line } from "react-icons/ri";
