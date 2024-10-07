@@ -16,7 +16,6 @@ interface StateProductProps {
 
 export default function ProductPage({ params }: { params: { id: string } }) {
   const dispatch = useDispatch<AppDispatch>();
-  const [openImage,setOpenImage] = useState({open:false,url:''})
   const { product }: { product: Product | null } = useSelector(
     (state: RootState) => state.product
   );
