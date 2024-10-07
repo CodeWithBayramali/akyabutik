@@ -10,7 +10,7 @@ export default function ProductCard({product}: {product:Product}) {
       <div className="relative overflow-hidden group">
         <Link href={`/product/${product.id}`}>
         <Image
-          className="object-cover transition-transform hover:cursor-pointer duration-300 group-hover:scale-110"
+          className="transition-transform hover:cursor-pointer duration-300 group-hover:scale-110"
           src={`${product?.images[0]?.url}`}
           alt="Product Image"
           width={600}
@@ -37,7 +37,8 @@ export default function ProductCard({product}: {product:Product}) {
                 item.color === 'WHITE' ? (
                   <span key={index} className={`w-4 h-4 text-xs rounded-full bg-white border`}></span>
                 ) :
-                  <span key={index} className={`w-4 h-4 text-xs rounded-full bg-${item.color.toLowerCase()}-600 border`}></span>
+                  <span key={index} className={`w-4 h-4 text-xs rounded-full 
+                    bg-${item.color.toLowerCase()}-600 border`}></span>
               ))
             }
           </div>

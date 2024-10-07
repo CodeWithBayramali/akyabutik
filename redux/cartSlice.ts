@@ -1,7 +1,5 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { CartProduct, Product } from "types";
-import { RiDeleteBinLine } from "react-icons/ri";
-
+import { createSlice } from "@reduxjs/toolkit";
+import { CartProduct } from "types";
 
 interface CartState {
   cartProducts: CartProduct[];
@@ -16,14 +14,13 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-
     addProduct: (state, action) => {
       const existingProduct = state.cartProducts.find(
         (p) => p.product.id === action.payload.product.id
       );
       if (existingProduct) {
+        state.total += existingProduct.product.price;
         existingProduct.quantity += 1;
-        state.total += existingProduct.product.price * action.payload.quantity;
       } else {
         state.cartProducts.push(action.payload);
         state.total += action.payload.product.price * action.payload.quantity;
@@ -36,14 +33,16 @@ const cartSlice = createSlice({
       );
       if (existingProduct && existingProduct.quantity !== undefined) {
         existingProduct.quantity -= 1;
-        state.total -= existingProduct.product.price;
+        state.total -= action.payload.product.price;
       }
     },
 
-    removeProduct: (state,action) => {
-        const newProducts = state.cartProducts.filter(p=> p.product.id !== action.payload.product.id)
-        state.cartProducts = newProducts
-        
+    removeProduct: (state, action) => {
+      const existingProduct = state.cartProducts.filter(
+        (p) => p.product.id !== action.payload.product.id
+      );
+      state.cartProducts = existingProduct;
+      state.total -= action.payload.product.price;
     },
 
     reset: (state, action) => {
@@ -53,5 +52,6 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addProduct, reset,removeProduct, discountProduct } = cartSlice.actions;
+export const { addProduct, reset, removeProduct, discountProduct } =
+  cartSlice.actions;
 export default cartSlice.reducer;

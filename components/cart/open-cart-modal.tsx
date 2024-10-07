@@ -45,9 +45,10 @@ export default function OpenCartModal({
     <div
       id="modal-overlay"
       onClick={handleOutsideClick}
-      className={`fixed inset-0 z-50 flex bg-black backdrop-opacity-25 items-center justify-end transition-opacity duration-300 ease-in-out ${
+      className={`fixed inset-0 z-50 flex bg-black items-center justify-end transition-opacity 
+        duration-300 ease-in-out ${
         isOpen ? "opacity-100 visible" : "opacity-0 invisible"
-      } bg-opacity-50`}
+      } bg-opacity-25`}
     >
       {/* Modal İçeriği */}
       <div

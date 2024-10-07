@@ -16,6 +16,7 @@ interface StateProductProps {
 
 export default function ProductPage({ params }: { params: { id: string } }) {
   const dispatch = useDispatch<AppDispatch>();
+  const [openImage,setOpenImage] = useState({open:false,url:''})
   const { product }: { product: Product | null } = useSelector(
     (state: RootState) => state.product
   );
@@ -33,7 +34,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
   const handleSendProductToCart = () => {
     if(!stateProduct.color)
       return setErrorState({...errorState,color:!errorState.color})
-    if(!stateProduct.size) 
+    if(!stateProduct.size)
       return setErrorState({...errorState,size:!errorState.size})
     dispatch(addProduct({
       product,
@@ -49,8 +50,6 @@ export default function ProductPage({ params }: { params: { id: string } }) {
       </div>
     );
   }
-
-  console.log(stateProduct);
 
   return (
     <div className="container grid md:grid-cols-3 sm:grid-cols-1 gap-x-6 my-32">
@@ -98,7 +97,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
 
       {/* PRODUCT CONTENT */}
       <div className="flex flex-col gap-y-6">
-        <h2 className="text-3xl">{product.name}</h2>
+        <h2 className="text-3xl sm:mt-4 md:mt-0">{product.name}</h2>
         <span className="flex flex-row gap-x-3 justify-between items-center">
           <p className="line-through text-xl">{product.price.toFixed(2)} TL</p>
           <p className="text-xl">{product.price.toFixed(2)} TL</p>
@@ -115,9 +114,10 @@ export default function ProductPage({ params }: { params: { id: string } }) {
         <div className="flex relative gap-x-4 flex-row">
           {product?.size?.map((item, index) => (
             <button
-              onClick={() =>
+              onClick={() => {
                 setStateProduct({ ...stateProduct, size: item.size })
-              }
+                setErrorState({...errorState,size:false})
+              }}
               key={index}
               className={`${
                 stateProduct.size === item.size
@@ -128,7 +128,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
               {item.size}
             </button>
           ))}
-          {!stateProduct.size && (
+          {errorState.size && (
             <span className="text-xs absolute -bottom-6 text-red-600">
               Lütfen beden seçiniz !
             </span>
@@ -141,31 +141,34 @@ export default function ProductPage({ params }: { params: { id: string } }) {
               (item.color === "WHITE" && (
                 <button
                 key={index}
-                  onClick={() =>
+                  onClick={() => {
                     setStateProduct({ ...stateProduct, color: "WHITE" })
-                  }
-                  className="bg-white w-6 h-6 border rounded-full"
+                    setErrorState({...errorState,color:false})
+                  }}
+                  className='bg-white w-6 h-6 border rounded-full'
                 ></button>
               )) ||
               (item.color === "BLACK" && (
                 <button
                 key={index}
-                  onClick={() =>
+                  onClick={() => {
                     setStateProduct({ ...stateProduct, color: "BLACK" })
-                  }
+                    setErrorState({...errorState,color:false})
+                  }}
                   className="bg-black w-6 h-6 border rounded-full"
                 ></button>
               )) || (
                 <button
                 key={index}
-                  onClick={() =>
+                  onClick={() => {
                     setStateProduct({ ...stateProduct, color: item.color })
-                  }
+                    setErrorState({...errorState,color:false})
+                  }}
                   className={`bg-${item.color.toLowerCase()}-600 w-6 h-6 border rounded-full`}
                 ></button>
               )
           )}
-          {!stateProduct.color && (
+          {errorState.color && (
             <span className="text-xs absolute -bottom-6 text-red-600">
               Lütfen renk seçiniz !
             </span>
