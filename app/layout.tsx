@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import {Montserrat} from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Root from "./root";
 
@@ -21,10 +21,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${montserrat.className} antialiased`}
-      >
-          <Root> {children} </Root>
+      <body className={`${montserrat.className} antialiased`}>
+        <Root> {children} </Root>
       </body>
     </html>
   );

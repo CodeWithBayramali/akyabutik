@@ -22,7 +22,9 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [mobile, setMobile] = useState(false);
 
-  const {cartProducts} : {cartProducts: CartProduct[]} = useSelector((state:RootState) => state.cart)
+  const { cartProducts }: { cartProducts: CartProduct[] } = useSelector(
+    (state: RootState) => state.cart
+  );
 
   const changeNavbarColor = () => {
     if (window.scrollY >= 50) {
@@ -47,18 +49,21 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`${mobile ? "bg-white transition-all backdrop-blur-lg bg-opacity-70 rounded-b-3xl py-6 z-30 fixed top-0 w-full" : 
-          "bg-transparent py-6 z-30 fixed top-0 w-full"}`}
+        className={`${
+          mobile
+            ? "bg-white transition-all backdrop-blur-lg bg-opacity-70 rounded-b-3xl py-6 z-30 fixed top-0 w-full"
+            : "bg-transparent py-6 z-30 fixed top-0 w-full"
+        }`}
       >
         <div className="container flex flex-row items-center justify-between">
           <span className="flex flex-row items-center gap-x-12">
-            <Link href='/'>
-            <Image
-              src="/images/akya-logo.png"
-              width={100}
-              height={100}
-              alt="akya_logo.png"
-            />
+            <Link href="/">
+              <Image
+                src="/images/akya-logo.png"
+                width={100}
+                height={100}
+                alt="akya_logo.png"
+              />
             </Link>
             <ul
               className={`${dancing_script.className} md:flex flex-row items-center sm:hidden gap-x-8`}
@@ -92,13 +97,14 @@ export default function Navbar() {
           <div className="flex items-center justify-center gap-x-8">
             <button className="relative rounded-lg">
               <FiShoppingCart onClick={toggleModal} size={28} />
-              {
-                cartProducts.length !== 0 && <span className="flex items-center justify-center absolute 
-                px-[5px] -right-2 -top-2 bg-blue-600 rounded-full text-white text-xs">
-                {cartProducts.length}
-              </span>
-              }
-              
+              {cartProducts.length !== 0 && (
+                <span
+                  className="flex items-center justify-center absolute 
+                px-[5px] -right-2 -top-2 bg-blue-600 rounded-full text-white text-xs"
+                >
+                  {cartProducts.length}
+                </span>
+              )}
             </button>
             {open ? (
               <RiCloseLargeLine onClick={() => setOpen(!open)} size={28} />
@@ -113,10 +119,14 @@ export default function Navbar() {
         </div>
       </nav>
       <ul
-        className={`${open ? `${dancing_script.className} fixed gap-y-8 bg-white flex h-screen 
-          flex-col backdrop-blur-lg bg-opacity-70 z-20 items-center justify-center top-0 w-full` : "hidden"}`}
+        className={`${
+          open
+            ? `${dancing_script.className} fixed gap-y-8 bg-white flex h-screen 
+          flex-col backdrop-blur-lg bg-opacity-70 z-20 items-center justify-center top-0 w-full`
+            : "hidden"
+        }`}
       >
-        <li onClick={()=> setOpen(!open)}>
+        <li onClick={() => setOpen(!open)}>
           <Link
             href="/all-products"
             className="text-gray-600 text-3xl font-bold hover:text-indigo-600 transition-all"

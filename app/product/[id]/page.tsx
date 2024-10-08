@@ -31,16 +31,19 @@ export default function ProductPage({ params }: { params: { id: string } }) {
   }, [dispatch, params.id]);
 
   const handleSendProductToCart = () => {
-    if(!stateProduct.color)
-      return setErrorState({...errorState,color:!errorState.color})
-    if(!stateProduct.size)
-      return setErrorState({...errorState,size:!errorState.size})
-    dispatch(addProduct({
-      product,
-      quantity: stateProduct.count,
-      size: stateProduct.size,
-      color: stateProduct.color,}))
-  }
+    if (!stateProduct.color)
+      return setErrorState({ ...errorState, color: !errorState.color });
+    if (!stateProduct.size)
+      return setErrorState({ ...errorState, size: !errorState.size });
+    dispatch(
+      addProduct({
+        product,
+        quantity: stateProduct.count,
+        size: stateProduct.size,
+        color: stateProduct.color,
+      })
+    );
+  };
 
   if (!product) {
     return (
@@ -57,8 +60,10 @@ export default function ProductPage({ params }: { params: { id: string } }) {
         <div className="grid grid-cols-1 gap-4">
           {/* İlk image tam genişlikte */}
           {product?.images?.[0] && (
-            <div className="relative h-[600px] w-full overflow-hidden group border flex 
-            items-center justify-center">
+            <div
+              className="relative h-[600px] w-full overflow-hidden group border flex 
+            items-center justify-center"
+            >
               <Image
                 className="transition-transform hover:cursor-pointer duration-300 group-hover:scale-125"
                 src={product?.images[0]?.url}
@@ -114,8 +119,8 @@ export default function ProductPage({ params }: { params: { id: string } }) {
           {product?.size?.map((item, index) => (
             <button
               onClick={() => {
-                setStateProduct({ ...stateProduct, size: item.size })
-                setErrorState({...errorState,size:false})
+                setStateProduct({ ...stateProduct, size: item.size });
+                setErrorState({ ...errorState, size: false });
               }}
               key={index}
               className={`${
@@ -139,29 +144,29 @@ export default function ProductPage({ params }: { params: { id: string } }) {
             (item, index) =>
               (item.color === "WHITE" && (
                 <button
-                key={index}
+                  key={index}
                   onClick={() => {
-                    setStateProduct({ ...stateProduct, color: "WHITE" })
-                    setErrorState({...errorState,color:false})
+                    setStateProduct({ ...stateProduct, color: "WHITE" });
+                    setErrorState({ ...errorState, color: false });
                   }}
-                  className='bg-white w-6 h-6 border rounded-full'
+                  className="bg-white w-6 h-6 border rounded-full"
                 ></button>
               )) ||
               (item.color === "BLACK" && (
                 <button
-                key={index}
+                  key={index}
                   onClick={() => {
-                    setStateProduct({ ...stateProduct, color: "BLACK" })
-                    setErrorState({...errorState,color:false})
+                    setStateProduct({ ...stateProduct, color: "BLACK" });
+                    setErrorState({ ...errorState, color: false });
                   }}
                   className="bg-black w-6 h-6 border rounded-full"
                 ></button>
               )) || (
                 <button
-                key={index}
+                  key={index}
                   onClick={() => {
-                    setStateProduct({ ...stateProduct, color: item.color })
-                    setErrorState({...errorState,color:false})
+                    setStateProduct({ ...stateProduct, color: item.color });
+                    setErrorState({ ...errorState, color: false });
                   }}
                   className={`bg-${item.color.toLowerCase()}-600 w-6 h-6 border rounded-full`}
                 ></button>
@@ -203,7 +208,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
             }
           />
         </span>
-        
+
         <button
           onClick={handleSendProductToCart}
           className="border py-2 hover:bg-black hover:text-white transition-all"

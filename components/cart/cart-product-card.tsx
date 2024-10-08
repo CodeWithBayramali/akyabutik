@@ -5,7 +5,11 @@ import { CartProduct } from "types";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import { useDispatch } from "react-redux";
 import { RiDeleteBin5Line } from "react-icons/ri";
-import { addProduct, discountProduct, removeProduct } from "../../redux/cartSlice";
+import {
+  addProduct,
+  discountProduct,
+  removeProduct,
+} from "../../redux/cartSlice";
 
 export default function CartProductCard({
   cartProduct,
@@ -20,21 +24,27 @@ export default function CartProductCard({
         width={55}
         height={55}
         objectFit="cover"
-        src={`${cartProduct.product?.images[0]?.url}`}
+        src={`${cartProduct.product.images[0]?.url}`}
         alt="product.jpg"
       />
       <div className="flex w-full flex-col gap-y-2 justify-center">
-        <h2 className="">{cartProduct.product?.name}</h2>
+        <h2 className="">{cartProduct.product.name}</h2>
         <p className="font-semibold">Fiyat: {cartProduct.product?.price}</p>
         <div className="flex flex-row items-center justify-between">
           <span className="py-2 px-2 flex w-32 gap-x-8 flex-row items-center justify-between border">
             {cartProduct.quantity <= 1 ? (
               <FaMinus className="text-gray-400 cursor-not-allowed" />
             ) : (
-              <FaMinus onClick={()=> dispatch(discountProduct(cartProduct))} className="cursor-pointer" />
+              <FaMinus
+                onClick={() => dispatch(discountProduct(cartProduct))}
+                className="cursor-pointer"
+              />
             )}
             <p>{cartProduct.quantity}</p>
-            <FaPlus onClick={()=>dispatch(addProduct(cartProduct))} className="cursor-pointer" />
+            <FaPlus
+              onClick={() => dispatch(addProduct(cartProduct))}
+              className="cursor-pointer"
+            />
           </span>
           <RiDeleteBin5Line
             onClick={() => dispatch(removeProduct(cartProduct))}
