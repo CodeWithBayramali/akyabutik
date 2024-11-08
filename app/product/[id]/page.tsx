@@ -20,7 +20,6 @@ export default function ProductPage({ params }: { params: { id: string } }) {
   const { product }: { product: Product | null } = useSelector(
     (state: RootState) => state.product
   );
-  const {cartProducts} = useSelector((state: RootState) => state.cart)
   const [stateProduct, setStateProduct] = useState<StateProductProps>({
     count: 1,
     size: "",

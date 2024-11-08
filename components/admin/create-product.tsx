@@ -1,6 +1,6 @@
 'use client'
 import { Formik } from "formik";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { productScheme } from "util/productSchema";
 import { LuUpload } from "react-icons/lu";
 import CurrencyInput from "react-currency-input-field";
@@ -63,7 +63,7 @@ export default function CreateProduct() {
     const formData = new FormData();
   
     const resizeAndAppendImages = async () => {
-      const resizePromises = (Object.values(images) as (File | null)[]).map((file, index) => {
+      const resizePromises = (Object.values(images) as (File | null)[]).map((file) => {
         if (file) {
           return new Promise<File>((resolve, reject) => {
             FileResizer.imageFileResizer(
@@ -169,7 +169,7 @@ export default function CreateProduct() {
       onSubmit={_handleSubmit}
       validationSchema={productScheme}
     >
-      {({ values, handleChange,setFieldValue, handleSubmit, errors }) => (
+      {({ values, handleChange,setFieldValue, handleSubmit }) => (
         <div className="flex flex-col gap-y-6">
           <div className="flex flex-row justify-center space-x-10">
             {(["img1", "img2", "img3"] as (keyof ViewImageState)[]).map(
@@ -305,7 +305,7 @@ export default function CreateProduct() {
           </div>
 
           {colorSize.map((item, index) => (
-            <div className="bg-white p-2 rounded-lg">
+            <div key={index} className="bg-white p-2 rounded-lg">
               <label className="uppercase">
                 {item.colorName} - {item.weight} : {item.count}
               </label>

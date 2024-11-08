@@ -1,7 +1,6 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import axios from "axios";
-import {jwtDecode} from "jwt-decode"; // JWT çözümleme kütüphanesi
 
 export const authOptions = {
   logger: false,
@@ -13,7 +12,7 @@ export const authOptions = {
         username: { label: "Email", type: "text" },
         password: { label: "Password", type: "password" },
       },
-      async authorize(credentials, req) {
+      async authorize(credentials) {
         try {
           const res = await axios.post(
             `${process.env.NEXT_PUBLIC_BACKEND_API}/auth`,

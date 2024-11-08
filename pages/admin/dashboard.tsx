@@ -7,7 +7,6 @@ import CreateProduct from 'components/admin/create-product';
 import { Provider } from 'react-redux';
 import store from '../../redux/store';
 import ProductList from 'components/admin/product-list';
-import OpenStockModal from 'components/admin/open-stock-modal';
 
 
 export default function Dashboard() {

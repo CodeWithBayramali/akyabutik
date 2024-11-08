@@ -77,7 +77,7 @@ export default function ProductList() {
               </thead>
               <tbody className="divide-y divide-gray-200 dark:divide-neutral-700">
                 {products?.map((item, index) => (
-                  <tr>
+                  <tr key={index}>
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">
                       <Image
                         src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${item.images[0]}`}

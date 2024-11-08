@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import categories from "../../public/category.json";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "redux/store";
 import cat from "../../public/cat.json";

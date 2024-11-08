@@ -3,14 +3,13 @@ import React from "react";
 import Image from "next/image";
 import { CartProduct } from "types";
 import { FaMinus, FaPlus } from "react-icons/fa6";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import {
   addProduct,
   discountProduct,
   removeProduct,
 } from "../../redux/cartSlice";
-import { RootState } from "redux/store";
 
 export default function CartProductCard({
   cartProduct,

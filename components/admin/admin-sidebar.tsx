@@ -4,14 +4,13 @@ import React, { useState } from "react";
 import { RxExit } from "react-icons/rx";
 import { IoHomeOutline, IoListOutline } from "react-icons/io5";
 import { FaBoxesPacking } from "react-icons/fa6";
-import { BsPlusSquare } from "react-icons/bs";
 import { GrMoney } from "react-icons/gr";
 import Link from "next/link";
 
 
 export default function AdminSidebar() {
 
-    const [link,setLink] = useState('list')
+    const [link] = useState('list')
 
   return (
     <div className="flex flex-col relative border-r h-screen border-gray-300">

@@ -6,7 +6,7 @@ import { RootState } from "../../redux/store";
 import PaymentForm from "components/payment-form";
 import Image from "next/image";
 
-export default function page() {
+export default function PaymentPage() {
 
   const {cartProducts,total} = useSelector((state:RootState) => state.cart)
   const [isClient, setIsClient] = useState(false);

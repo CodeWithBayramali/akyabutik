@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "redux/store";
 import il from '../public/il.json'
@@ -73,7 +73,7 @@ export default function PaymentForm() {
         onSubmit={_handleSubmit}
         validationSchema={orderSchema}
       >
-        {({values,handleChange,errors,handleSubmit})=> (
+        {({values,handleChange,handleSubmit})=> (
           <>
           <div className="flex flex-col gap-y-6 mt-2">
           <h1 className="text-xl font-semibold">İletişim</h1>
@@ -131,7 +131,7 @@ export default function PaymentForm() {
               <option>İlçe Seçiniz</option>
               {
                 ilceState.map((item,index)=> (
-                  <option>{item.name}</option>
+                  <option key={index}>{item.name}</option>
                 ))
               }
             </select>

@@ -7,8 +7,8 @@ import { Product } from "types";
 import { RootState } from "redux/store";
 
 
-export default function page() {
-  const {categoryProducts}: {categoryProducts: Product[]} = useSelector((state:RootState)=> state.product)
+export default function Page() {
+  const {categoryProducts} = useSelector((state:RootState)=> state.product)
 
   return (
     <div className="container flex sm:flex-col md:flex-row my-28">
