@@ -6,23 +6,23 @@
         "category": "ust-giyim",
         "size": [
             {
-                "size":"SM",
+                "width":"SM",
                 "count": 10
             },
             {
-                "size":"MD",
+                "width":"MD",
                 "count": 10
             },
             {
-                "size":"LG",
+                "width":"LG",
                 "count": 10
             },
             {
-                "size":"XL",
+                "width":"XL",
                 "count": 10
             },
             {
-                "size":"XXL",
+                "width":"XXL",
                 "count": 10
             }
         ],
@@ -61,23 +61,23 @@
         "category": "ust-giyim",
         "size": [
             {
-                "size":"SM",
+                "width":"SM",
                 "count": 10
             },
             {
-                "size":"MD",
+                "width":"MD",
                 "count": 10
             },
             {
-                "size":"LG",
+                "width":"LG",
                 "count": 10
             },
             {
-                "size":"XL",
+                "width":"XL",
                 "count": 10
             },
             {
-                "size":"XXL",
+                "width":"XXL",
                 "count": 10
             }
         ],
@@ -116,23 +116,23 @@
         "category": "alt-giyim",
         "size": [
             {
-                "size":"SM",
+                "width":"SM",
                 "count": 10
             },
             {
-                "size":"MD",
+                "width":"MD",
                 "count": 10
             },
             {
-                "size":"LG",
+                "width":"LG",
                 "count": 10
             },
             {
-                "size":"XL",
+                "width":"XL",
                 "count": 10
             },
             {
-                "size":"XXL",
+                "width":"XXL",
                 "count": 10
             }
         ],
@@ -171,23 +171,23 @@
         "category": "ust-giyim",
         "size": [
             {
-                "size":"SM",
+                "width":"SM",
                 "count": 10
             },
             {
-                "size":"MD",
+                "width":"MD",
                 "count": 10
             },
             {
-                "size":"LG",
+                "width":"LG",
                 "count": 10
             },
             {
-                "size":"XL",
+                "width":"XL",
                 "count": 10
             },
             {
-                "size":"XXL",
+                "width":"XXL",
                 "count": 10
             }
         ],
@@ -225,23 +225,23 @@
         "category": "ust-giyim",
         "size": [
             {
-                "size":"SM",
+                "width":"SM",
                 "count": 10
             },
             {
-                "size":"MD",
+                "width":"MD",
                 "count": 10
             },
             {
-                "size":"LG",
+                "width":"LG",
                 "count": 10
             },
             {
-                "size":"XL",
+                "width":"XL",
                 "count": 10
             },
             {
-                "size":"XXL",
+                "width":"XXL",
                 "count": 10
             }
         ],
@@ -279,23 +279,23 @@
         "category": "ust-giyim",
         "size": [
             {
-                "size":"SM",
+                "width":"SM",
                 "count": 10
             },
             {
-                "size":"MD",
+                "width":"MD",
                 "count": 10
             },
             {
-                "size":"LG",
+                "width":"LG",
                 "count": 10
             },
             {
-                "size":"XL",
+                "width":"XL",
                 "count": 10
             },
             {
-                "size":"XXL",
+                "width":"XXL",
                 "count": 10
             }
         ],
@@ -333,23 +333,23 @@
         "category": "ust-giyim",
         "size": [
             {
-                "size":"SM",
+                "width":"SM",
                 "count": 10
             },
             {
-                "size":"MD",
+                "width":"MD",
                 "count": 10
             },
             {
-                "size":"LG",
+                "width":"LG",
                 "count": 10
             },
             {
-                "size":"XL",
+                "width":"XL",
                 "count": 10
             },
             {
-                "size":"XXL",
+                "width":"XXL",
                 "count": 10
             }
         ],
@@ -388,23 +388,23 @@
         "category": "alt-giyim",
         "size": [
             {
-                "size":"SM",
+                "width":"SM",
                 "count": 10
             },
             {
-                "size":"MD",
+                "width":"MD",
                 "count": 10
             },
             {
-                "size":"LG",
+                "width":"LG",
                 "count": 10
             },
             {
-                "size":"XL",
+                "width":"XL",
                 "count": 10
             },
             {
-                "size":"XXL",
+                "width":"XXL",
                 "count": 10
             }
         ],

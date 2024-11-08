@@ -1,0 +1,272 @@
+[
+    {
+        "name": "Beyaz",
+        "tag": "white",
+        "size": "XS"
+    },
+    {
+        "name": "Beyaz",
+        "tag": "white",
+        "size": "S"
+    },
+    {
+        "name": "Beyaz",
+        "tag": "white",
+        "size": "M"
+    },
+    {
+        "name": "Beyaz",
+        "tag": "white",
+        "size": "L"
+    },
+    {
+        "name": "Beyaz",
+        "tag": "white",
+        "size": "XL"
+    },
+    {
+        "name": "Beyaz",
+        "tag": "white",
+        "size": "XXL"
+    },
+    {
+        "name": "Siyah",
+        "tag": "black",
+        "size": "XS"
+    },
+    {
+        "name": "Siyah",
+        "tag": "black",
+        "size": "S"
+    },
+    {
+        "name": "Siyah",
+        "tag": "black",
+        "size": "M"
+    },
+    {
+        "name": "Siyah",
+        "tag": "black",
+        "size": "L"
+    },
+    {
+        "name": "Siyah",
+        "tag": "black",
+        "size": "XL"
+    },
+    {
+        "name": "Siyah",
+        "tag": "black",
+        "size": "XXL"
+    },
+    {
+        "name": "Mavi",
+        "tag": "blue",
+        "size": "XS"
+    },
+    {
+        "name": "Mavi",
+        "tag": "blue",
+        "size": "S"
+    },
+    {
+        "name": "Mavi",
+        "tag": "blue",
+        "size": "M"
+    },
+    {
+        "name": "Mavi",
+        "tag": "blue",
+        "size": "L"
+    },
+    {
+        "name": "Mavi",
+        "tag": "blue",
+        "size": "XL"
+    },
+    {
+        "name": "Mavi",
+        "tag": "blue",
+        "size": "XXL"
+    },
+    {
+        "name": "Kırmızı",
+        "tag": "red",
+        "size": "XS"
+    },
+    {
+        "name": "Kırmızı",
+        "tag": "red",
+        "size": "S"
+    },
+    {
+        "name": "Kırmızı",
+        "tag": "red",
+        "size": "M"
+    },
+    {
+        "name": "Kırmızı",
+        "tag": "red",
+        "size": "L"
+    },
+    {
+        "name": "Kırmızı",
+        "tag": "red",
+        "size": "XL"
+    },
+    {
+        "name": "Kırmızı",
+        "tag": "red",
+        "size": "XXL"
+    },
+    {
+        "name": "Sarı",
+        "tag": "yellow",
+        "size": "XS"
+    },
+    {
+        "name": "Sarı",
+        "tag": "yellow",
+        "size": "S"
+    },
+    {
+        "name": "Sarı",
+        "tag": "yellow",
+        "size": "M"
+    },
+    {
+        "name": "Sarı",
+        "tag": "yellow",
+        "size": "L"
+    },
+    {
+        "name": "Sarı",
+        "tag": "yellow",
+        "size": "XL"
+    },
+    {
+        "name": "Sarı",
+        "tag": "yellow",
+        "size": "XXL"
+    },
+    {
+        "name": "Pembe",
+        "tag": "pink",
+        "size": "XS"
+    },
+    {
+        "name": "Pembe",
+        "tag": "pink",
+        "size": "S"
+    },
+    {
+        "name": "Pembe",
+        "tag": "pink",
+        "size": "M"
+    },
+    {
+        "name": "Pembe",
+        "tag": "pink",
+        "size": "L"
+    },
+    {
+        "name": "Pembe",
+        "tag": "pink",
+        "size": "XL"
+    },
+    {
+        "name": "Pembe",
+        "tag": "pink",
+        "size": "XXL"
+    },
+    {
+        "name": "Kahverengi",
+        "tag": "stone",
+        "size": "XS"
+    },
+    {
+        "name": "Kahverengi",
+        "tag": "stone",
+        "size": "S"
+    },
+    {
+        "name": "Kahverengi",
+        "tag": "stone",
+        "size": "M"
+    },
+    {
+        "name": "Kahverengi",
+        "tag": "stone",
+        "size": "L"
+    },
+    {
+        "name": "Kahverengi",
+        "tag": "stone",
+        "size": "XL"
+    },
+    {
+        "name": "Kahverengi",
+        "tag": "stone",
+        "size": "XXL"
+    },
+    {
+        "name": "Yeşil",
+        "tag": "green",
+        "size": "XS"
+    },
+    {
+        "name": "Yeşil",
+        "tag": "green",
+        "size": "S"
+    },
+    {
+        "name": "Yeşil",
+        "tag": "green",
+        "size": "M"
+    },
+    {
+        "name": "Yeşil",
+        "tag": "green",
+        "size": "L"
+    },
+    {
+        "name": "Yeşil",
+        "tag": "green",
+        "size": "XL"
+    },
+    {
+        "name": "Yeşil",
+        "tag": "green",
+        "size": "XXL"
+    },
+    {
+        "name": "Mor",
+        "tag": "purple",
+        "size": "XS"
+    },
+    {
+        "name": "Mor",
+        "tag": "purple",
+        "size": "S"
+    },
+    {
+        "name": "Mor",
+        "tag": "purple",
+        "size": "M"
+    },
+    {
+        "name": "Mor",
+        "tag": "purple",
+        "size": "L"
+    },
+    {
+        "name": "Mor",
+        "tag": "purple",
+        "size": "XL"
+    },
+    {
+        "name": "Mor",
+        "tag": "purple",
+        "size": "XXL"
+    }
+]

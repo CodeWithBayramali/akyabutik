@@ -1,9 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "redux/store";
 import { CartProduct } from "types";
 import CartProductCard from "./cart-product-card";
+import { useRouter } from "next/navigation";
 
 interface OpenCartModalProps {
   isOpen: boolean;
@@ -20,7 +21,7 @@ export default function OpenCartModal({
   }: { cartProducts: CartProduct[]; total: number } = useSelector(
     (state: RootState) => state.cart
   );
-
+  const navigation = useRouter()
   const [isClosing, setIsClosing] = useState(false);
 
   const handleOutsideClick = (
@@ -40,6 +41,11 @@ export default function OpenCartModal({
       closeModal(); // Modalı tamamen kapatma
     }, 300); // Animasyon süresi
   };
+
+  const goToPaymenyPage = () => {
+      navigation.push('/payment')
+      closeModal()
+  }
 
   return (
     <div
@@ -93,9 +99,13 @@ export default function OpenCartModal({
         </div>
         <span className="text-xl fixed border-t w-full bottom-0">
           <p className="py-6 px-4 font-semibold">Toplam: {total.toFixed(2)} ₺</p>
-          <button disabled={cartProducts.length === 0} className="bg-black p-4 font-bold text-white w-full">
+          {
+            cartProducts.length !== 0 && (
+              <button onClick={goToPaymenyPage} className="bg-black p-4 font-bold flex justify-center text-white w-full">
                 Ödeme
-          </button>
+              </button>
+            )
+          }
         </span>
       </div>
     </div>

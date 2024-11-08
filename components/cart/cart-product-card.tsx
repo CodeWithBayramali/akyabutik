@@ -3,13 +3,14 @@ import React from "react";
 import Image from "next/image";
 import { CartProduct } from "types";
 import { FaMinus, FaPlus } from "react-icons/fa6";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import {
   addProduct,
   discountProduct,
   removeProduct,
 } from "../../redux/cartSlice";
+import { RootState } from "redux/store";
 
 export default function CartProductCard({
   cartProduct,
@@ -21,10 +22,11 @@ export default function CartProductCard({
   return (
     <div className="flex flex-row gap-x-4 p-1 pb-4 border-b">
       <Image
-        width={55}
-        height={55}
-        objectFit="cover"
-        src={`${cartProduct.product.images[0]?.url}`}
+      width={100}
+      height={8}
+        layout="fit"
+        objectFit="contain"
+        src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${cartProduct.product.images[0]}`}
         alt="product.jpg"
       />
       <div className="flex w-full flex-col gap-y-2 justify-center">

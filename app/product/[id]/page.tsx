@@ -11,6 +11,7 @@ import { addProduct } from "../../../redux/cartSlice";
 interface StateProductProps {
   count: number;
   size: string;
+  colorTagName: string;
   color: string;
 }
 
@@ -19,12 +20,20 @@ export default function ProductPage({ params }: { params: { id: string } }) {
   const { product }: { product: Product | null } = useSelector(
     (state: RootState) => state.product
   );
+  const {cartProducts} = useSelector((state: RootState) => state.cart)
   const [stateProduct, setStateProduct] = useState<StateProductProps>({
     count: 1,
     size: "",
     color: "",
+    colorTagName: "",
   });
   const [errorState, setErrorState] = useState({ color: false, size: false });
+
+  // Seçilen bedene göre renkleri filtreleme
+  const filteredColors = product?.colorSize.filter(
+    (item) => item.weight === stateProduct.size
+  );
+
 
   useEffect(() => {
     dispatch(getProductDispatch(params.id));
@@ -37,18 +46,21 @@ export default function ProductPage({ params }: { params: { id: string } }) {
       return setErrorState({ ...errorState, size: !errorState.size });
     dispatch(
       addProduct({
-        product,
+        product: product as Product,
         quantity: stateProduct.count,
         size: stateProduct.size,
-        color: stateProduct.color,
+        color: stateProduct.colorTagName,
+        colorTagName: stateProduct.colorTagName
       })
     );
   };
 
+  
+
   if (!product) {
     return (
-      <div className="h-screen bg-white items-center justify-center text-blue-600">
-        Loading...
+      <div className="h-screen bg-white items-center justify-center w-full text-blue-600">
+        <p className="text-xl text-blue-600">Yükleniyor...</p>
       </div>
     );
   }
@@ -61,38 +73,36 @@ export default function ProductPage({ params }: { params: { id: string } }) {
           {/* İlk image tam genişlikte */}
           {product?.images?.[0] && (
             <div
-              className="relative h-[600px] w-full overflow-hidden group border flex 
+              className="relative md:h-[800px] sm:h-[500px] w-full overflow-hidden group border flex 
             items-center justify-center"
             >
               <Image
                 className="transition-transform hover:cursor-pointer duration-300 group-hover:scale-125"
-                src={product?.images[0]?.url}
+                src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${product?.images[0]}`}
                 alt="Product Image"
                 layout="fill"
-                objectFit="contain"
+                objectFit="cover"
               />
             </div>
           )}
         </div>
 
-        <div className="grid grid-cols-2 gap-4 mt-4">
+        <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-4 mt-4">
           {/* Diğer image'lar ikişerli olarak */}
           {product?.images
             ?.slice(1, product.images.length)
             .map((item, index) => (
               <div
                 key={index}
-                className="relative overflow-hidden group flex items-center justify-center"
+                className="relative overflow-hidden border group h-96 w-full flex items-center justify-center"
               >
                 <Image
                   className="object-cover transition-transform hover:cursor-pointer 
                   duration-300 group-hover:scale-110"
-                  src={item.url}
+                  src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${item}`}
                   alt="Product Image"
-                  layout="responsive"
+                  layout="fill"
                   objectFit="cover"
-                  width={300}
-                  height={300}
                 />
               </div>
             ))}
@@ -103,78 +113,83 @@ export default function ProductPage({ params }: { params: { id: string } }) {
       <div className="flex flex-col gap-y-6">
         <h2 className="text-3xl sm:mt-4 md:mt-0">{product.name}</h2>
         <span className="flex flex-row gap-x-3 justify-between items-center">
-          <p className="line-through text-xl">{product.price.toFixed(2)} TL</p>
-          <p className="text-xl">{product.price.toFixed(2)} TL</p>
-          <p className="bg-black text-white px-2 py-1 text-sm rounded-full">
-            İndirim
-          </p>
+          <p className="text-xl font-semibold">{product.price.toFixed(2)} TL</p>
         </span>
 
         <p className="text-xs text-gray-500">
           Vergi dahildir. <span className="underline">Kargo</span>, ödeme
           sayfasında hesaplanır.
         </p>
-        <span>Size</span>
+        <span>Beden</span>
         <div className="flex relative gap-x-4 flex-row">
-          {product?.size?.map((item, index) => (
+          {[
+            ...new Map(
+              product?.colorSize?.map((item) => [item.weight, item])
+            ).values(),
+          ].map((item, index) => (
             <button
               onClick={() => {
-                setStateProduct({ ...stateProduct, size: item.size });
+                setStateProduct({ ...stateProduct, size: item.weight });
                 setErrorState({ ...errorState, size: false });
               }}
               key={index}
               className={`${
-                stateProduct.size === item.size
+                stateProduct.size === item.weight
                   ? "border rounded-full bg-black text-white text-sm px-2.5 py-1"
                   : "border rounded-full text-sm px-2.5 py-1"
               }`}
             >
-              {item.size}
+              {item.weight}
             </button>
           ))}
           {errorState.size && (
             <span className="text-xs absolute -bottom-6 text-red-600">
-              Lütfen beden seçiniz !
+              Lütfen beden seçiniz!
             </span>
           )}
         </div>
         <p>Renk</p>
         <div className="flex relative flex-row items-center gap-x-4">
-          {product.colors.map(
-            (item, index) =>
-              (item.color === "WHITE" && (
-                <button
-                  key={index}
-                  onClick={() => {
-                    setStateProduct({ ...stateProduct, color: "WHITE" });
+          {/* Beden seçildiğinde, sadece o bedene ait renkleri göster */}
+          {filteredColors?.map((item, index) => {
+            const colorClassMap = {
+              white: "bg-white",
+              black: "bg-black",
+              red: "bg-red-600",
+              blue: "bg-blue-600",
+              green: "bg-green-600",
+              pink: "bg-pink-600",
+              stone: "bg-stone-600",
+              yellow: "bg-yellow-600",
+            };
+
+            return (
+              <button
+                key={index}
+                disabled={item.count <= 0}
+                onClick={() => {
+                  if (item.count > 0) {
+                    setStateProduct({
+                      ...stateProduct,
+                      color: item.colorName,
+                      colorTagName: item.colorTagName,
+                    });
                     setErrorState({ ...errorState, color: false });
-                  }}
-                  className="bg-white w-6 h-6 border rounded-full"
-                ></button>
-              )) ||
-              (item.color === "BLACK" && (
-                <button
-                  key={index}
-                  onClick={() => {
-                    setStateProduct({ ...stateProduct, color: "BLACK" });
-                    setErrorState({ ...errorState, color: false });
-                  }}
-                  className="bg-black w-6 h-6 border rounded-full"
-                ></button>
-              )) || (
-                <button
-                  key={index}
-                  onClick={() => {
-                    setStateProduct({ ...stateProduct, color: item.color });
-                    setErrorState({ ...errorState, color: false });
-                  }}
-                  className={`bg-${item.color.toLowerCase()}-600 w-6 h-6 border rounded-full`}
-                ></button>
-              )
-          )}
+                  }
+                }}
+                className={`${
+                  stateProduct.color === item.colorName &&
+                  "border-4 border-gray-500"
+                } w-6 h-6 border rounded-full ${
+                  colorClassMap[item.colorName as keyof typeof colorClassMap] ||
+                  "bg-gray-500"
+                }`}
+              ></button>
+            );
+          })}
           {errorState.color && (
             <span className="text-xs absolute -bottom-6 text-red-600">
-              Lütfen renk seçiniz !
+              Lütfen renk seçiniz!
             </span>
           )}
         </div>
@@ -199,13 +214,27 @@ export default function ProductPage({ params }: { params: { id: string } }) {
           )}
           <p>{stateProduct.count}</p>
           <FaPlus
-            className="cursor-pointer"
-            onClick={() =>
-              setStateProduct({
-                ...stateProduct,
-                count: stateProduct.count + 1,
-              })
-            }
+            className={`${
+              stateProduct.count >=
+              (product.colorSize.find(
+                (item) => item.colorName === stateProduct.color
+              )?.count || 0)
+                ? "text-gray-300 cursor-not-allowed"
+                : "cursor-pointer"
+            }`}
+            onClick={() => {
+              const stockLimit =
+                product.colorSize.find(
+                  (item) => item.colorName === stateProduct.color
+                )?.count || 0;
+
+              if (stateProduct.count < stockLimit) {
+                setStateProduct({
+                  ...stateProduct,
+                  count: stateProduct.count + 1,
+                });
+              }
+            }}
           />
         </span>
 
@@ -215,7 +244,6 @@ export default function ProductPage({ params }: { params: { id: string } }) {
         >
           Sepete Ekle
         </button>
-        <button className="bg-black text-white py-2">Hemen satın alın</button>
         <p className="text-gray-500 text-sm">{product.description}</p>
       </div>
     </div>

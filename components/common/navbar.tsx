@@ -7,9 +7,11 @@ import { FiShoppingCart } from "react-icons/fi";
 import { RiMenu4Fill } from "react-icons/ri";
 import { RiCloseLargeLine } from "react-icons/ri";
 import { Dancing_Script } from "next/font/google";
-import { CartProduct } from "types";
 import { useSelector } from "react-redux";
 import { RootState } from "redux/store";
+import { useSession } from "next-auth/react";
+import { FaWhatsapp } from "react-icons/fa";
+
 
 const dancing_script = Dancing_Script({
   subsets: ["latin"],
@@ -21,11 +23,10 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const [mobile, setMobile] = useState(false);
+  const { data: session } = useSession()
 
-  const { cartProducts }: { cartProducts: CartProduct[] } = useSelector(
-    (state: RootState) => state.cart
-  );
-
+  const {cartProducts} = useSelector((state:RootState) => state.cart)
+  const [isClient, setIsClient] = useState(false);
   const changeNavbarColor = () => {
     if (window.scrollY >= 50) {
       setMobile(true);
@@ -45,6 +46,15 @@ export default function Navbar() {
   const closeModal = () => {
     setIsOpen(false);
   };
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  // Render only when the component is mounted on the client side
+  if (!isClient) {
+    return null; // Return nothing initially for SSR hydration
+  }
 
   return (
     <>
@@ -78,32 +88,36 @@ export default function Navbar() {
               </li>
               <li>
                 <Link
-                  href={`/men`}
+                  href={`/about`}
                   className="text-gray-600 font-bold text-2xl hover:text-indigo-600 transition-all"
                 >
-                  Erkek
+                  Hakkımızda
                 </Link>
               </li>
               <li>
                 <Link
-                  href={`/woman`}
+                  href={`/contact`}
                   className="text-gray-600 font-bold text-2xl hover:text-indigo-600 transition-all"
                 >
-                  Kadın
+                  İletişim
                 </Link>
               </li>
             </ul>
           </span>
           <div className="flex items-center justify-center gap-x-8">
+            <Link href="https://wa.me/905541471715" target="_blank"><FaWhatsapp size={28} /></Link>
+            {
+              session && <Link href='/admin/dashboard' className="p-2 bg-blue-600 text-white text-xs rounded-lg">Admin</Link>
+            }
             <button className="relative rounded-lg">
               <FiShoppingCart onClick={toggleModal} size={28} />
               {cartProducts.length !== 0 && (
-                <span
+                <article
                   className="flex items-center justify-center absolute 
                 px-[5px] -right-2 -top-2 bg-blue-600 rounded-full text-white text-xs"
                 >
-                  {cartProducts.length}
-                </span>
+                  {cartProducts?.length}
+                </article>
               )}
             </button>
             {open ? (
@@ -134,20 +148,20 @@ export default function Navbar() {
             Tüm Ürünler
           </Link>
         </li>
-        <li>
+        <li onClick={() => setOpen(!open)}>
           <Link
-            href={`/men`}
+            href={`/about`}
             className="text-gray-600 text-3xl font-bold hover:text-indigo-600 transition-all"
           >
-            Erkek
+            Hakkımızda
           </Link>
         </li>
-        <li>
+        <li onClick={() => setOpen(!open)}>
           <Link
-            href={`/woman`}
+            href={`/contact`}
             className="text-gray-600 text-3xl font-bold hover:text-indigo-600 transition-all"
           >
-            Kadın
+            İletişim
           </Link>
         </li>
       </ul>

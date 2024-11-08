@@ -37,28 +37,15 @@ export default function Footer() {
             </Link>
           </li>
           <li>
-            <Link href="/men" className="hover:text-indigo-600">
-            <SiWhatsapp size={24} />
-            </Link>
+            <Link href="https://wa.me/905541471715" target="_blank"><SiWhatsapp size={24} /></Link>
           </li>
         </ul>
-        <ul className="flex flex-col items-center justify-start gap-y-4">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3189.117439165436!2d30.670249999999996!3d36.9353608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c38f2bbc76a7cd%3A0x4404d36882040ff5!2sAkya%20Butik!5e0!3m2!1str!2str!4v1727614010571!5m2!1str!2str"
-          width="350"
-          height="200"
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
+        <ul className="flex flex-col items-center justify-start gap-y-4 ">
+          <li className="hover:text-blue-600"><Link href='/iptal-iade-politikasi'>İptal ve İade Politikası</Link></li>
+          <li className="hover:text-blue-600"><Link href='/mesafeli-satis-sozlesmesi'>Mesafeli Satış Sözleşmesi</Link></li>
+          <li className="hover:text-blue-600"><Link href='/kvkk'>KVKK</Link></li>
         </ul>
         
-      </div>
-      <div className="container text-xs underline flex flex-row justify-center gap-x-6 items-center py-4">
-        <Link href='/iptal-iade-politikasi'>iptal ve iade politikası</Link>
-        <Link href='/mesafeli-satis-sozlesmesi'>mesafeli satış sözleşmesi</Link>
-        <Link href='/kvkk'>kvkk</Link>
       </div>
     </footer>
   );

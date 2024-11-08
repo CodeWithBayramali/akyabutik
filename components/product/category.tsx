@@ -1,81 +1,128 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import MobileMenuCategory from "./mobile-menu-category";
+import { useDispatch } from "react-redux";
+import {
+  getNewProductsDispatch,
+  getProductsByCategoryDispatch,
+} from "../../redux/productSlice";
+import cat from "../../public/cat.json";
+import { FaAngleLeft } from "react-icons/fa";
+import { AppDispatch } from "redux/store";
 
 export default function Category() {
-  const [categoryOpenTab, setCategoryOpenTab] = useState("");
+  const dispatch = useDispatch<AppDispatch>();
+  const [selectedCategory, setSelectedCategory] = useState("en-yeniler");
+
+  const getProductsByCategory = (categoryName: string) => {
+    setSelectedCategory(categoryName);
+  };
+
+  useEffect(() => {
+    if (selectedCategory === "en-yeniler") {
+      dispatch(getNewProductsDispatch(0, 12));
+    } else {
+      dispatch(getProductsByCategoryDispatch(selectedCategory));
+    }
+  }, [dispatch, selectedCategory]);
 
   return (
     <>
-    <MobileMenuCategory />
-    <div className="sm:hidden md:flex sticky top-24 w-44">
-      <ul className="flex md:flex-col sm:flex-row gap-y-2 text-gray-500">
-        <li>
-          <button className="text-sm">En Yeniler</button>
-        </li>
-        <li>
-          <button className="text-sm flex flex-row items-center justify-between">
-            <p>Elbise</p>
-          </button>
-        </li>
-        <li>
-          <button
-            onClick={() => setCategoryOpenTab("ust-giyim")}
-            className={`${categoryOpenTab === "ust-giyim" && "text-blue-600"} text-sm flex flex-row gap-x-4 items-center justify-between`}
+      <MobileMenuCategory />
+      <div className="sm:hidden md:sticky top-24 md:flex w-44">
+        <ul className="flex md:flex-col sm:flex-row gap-y-2 text-gray-500">
+          <li
+            onClick={() => getProductsByCategory('en-yeniler')}
+            className={`${
+              selectedCategory === 'en-yeniler'
+                ? "text-blue-600"
+                : "hover:text-blue-600 text-gray-600"
+            } items-center cursor-pointer flex flex-row justify-between`}
           >
-            <p>Üst Giyim</p>
-            <MdKeyboardArrowDown />
-          </button>
-            <ul className="flex flex-col text-xs ml-2 gap-y-2 my-2">
-              <li className="hover:text-blue-600 cursor-pointer">Bluz</li>
-              <li className="hover:text-blue-600 cursor-pointer">Gömlek</li>
-              <li className="hover:text-blue-600 cursor-pointer">Sweatshirt</li>
-              <li className="hover:text-blue-600 cursor-pointer">T-shirt</li>
-              <li className="hover:text-blue-600 cursor-pointer">
-                Kazaklar/Triko
-              </li>
-              <li className="hover:text-blue-600 cursor-pointer">Hırka</li>
-              <li className="hover:text-blue-600 cursor-pointer">Atlet</li>
-              <li className="hover:text-blue-600 cursor-pointer">Crop</li>
-            </ul>
-        </li>
-        <li>
-          <button
-            onClick={() => setCategoryOpenTab("alt-giyim")}
-            className={`${categoryOpenTab === "alt-giyim" && "text-blue-600"} text-sm flex flex-row gap-x-4 items-center justify-between`}
+            En Yeniler {selectedCategory === 'en-yeniler' && <FaAngleLeft />}
+          </li>
+          <li
+            onClick={() => getProductsByCategory('elbise')}
+            className={`${
+              selectedCategory === 'elbise'
+                ? "text-blue-600"
+                : "hover:text-blue-600 text-gray-600"
+            } items-center cursor-pointer flex flex-row justify-between`}
           >
-            <p>Alt Giyim</p>
-            <MdKeyboardArrowDown />
-          </button>
+            Elbise {selectedCategory === 'elbise' && <FaAngleLeft />}
+          </li>
+          <li>
+            <button
+              className={`text-blue-600 text-sm flex flex-row gap-x-4 items-center justify-between font-semibold`}
+            >
+              <p>Üst Giyim</p>
+              <MdKeyboardArrowDown />
+            </button>
             <ul className="flex flex-col text-xs ml-2 gap-y-2 my-2">
-              <li className="hover:text-blue-600 cursor-pointer">Pantolon</li>
-              <li className="hover:text-blue-600 cursor-pointer">Tayt</li>
-              <li className="hover:text-blue-600 cursor-pointer">Tulum</li>
-              <li className="hover:text-blue-600 cursor-pointer">Jean</li>
-              <li className="hover:text-blue-600 cursor-pointer">Etek</li>
-              <li className="hover:text-blue-600 cursor-pointer">Şort</li>
+              {cat[0]?.subCategories?.map((item, index) => (
+                <li
+                  key={index}
+                  onClick={() => getProductsByCategory(item.tag)}
+                  className={`${
+                    item.tag === selectedCategory
+                      ? "text-blue-600"
+                      : "hover:text-blue-600 text-gray-600"
+                  } items-center cursor-pointer flex flex-row justify-between`}
+                >
+                  {item.name} {item.tag === selectedCategory && <FaAngleLeft />}
+                </li>
+              ))}
             </ul>
-        </li>
-        <li>
-          <button 
-            onClick={() => setCategoryOpenTab("dis-giyim")}
-            className={`${categoryOpenTab === "dis-giyim" && "text-blue-600"} text-sm flex flex-row gap-x-4 items-center justify-between`}
-          >
-            <p>Dış Giyim</p>
-            <MdKeyboardArrowDown />
-          </button>
+          </li>
+          <li>
+            <button
+              className={`text-blue-600 text-sm flex flex-row gap-x-4 items-center justify-between font-semibold`}
+            >
+              <p>Alt Giyim</p>
+              <MdKeyboardArrowDown />
+            </button>
             <ul className="flex flex-col text-xs ml-2 gap-y-2 my-2">
-              <li className="hover:text-blue-600 cursor-pointer">Pantolon</li>
-              <li className="hover:text-blue-600 cursor-pointer">Tayt</li>
-              <li className="hover:text-blue-600 cursor-pointer">Tulum</li>
-              <li className="hover:text-blue-600 cursor-pointer">Jean</li>
-              <li className="hover:text-blue-600 cursor-pointer">Etek</li>
-              <li className="hover:text-blue-600 cursor-pointer">Şort</li>
+              {cat[2]?.subCategories?.map((item, index) => (
+                <li
+                  key={index}
+                  onClick={() => getProductsByCategory(item.tag)}
+                  className={`${
+                    item.tag === selectedCategory
+                      ? "text-blue-600"
+                      : "hover:text-blue-600 text-gray-600"
+                  } items-center cursor-pointer flex flex-row justify-between`}
+                >
+                  {item.name} {item.tag === selectedCategory && <FaAngleLeft />}
+                </li>
+              ))}
             </ul>
-        </li>
-      </ul>
-    </div>
+          </li>
+          <li>
+            <button
+              className={`text-blue-600 text-sm flex flex-row gap-x-4 items-center justify-between font-semibold`}
+            >
+              <p>Dış Giyim</p>
+              <MdKeyboardArrowDown />
+            </button>
+            <ul className="flex flex-col text-xs ml-2 gap-y-2 my-2">
+              {cat[3]?.subCategories?.map((item, index) => (
+                <li
+                  key={index}
+                  onClick={() => getProductsByCategory(item.tag)}
+                  className={`${
+                    item.tag === selectedCategory
+                      ? "text-blue-600"
+                      : "hover:text-blue-600 text-gray-600"
+                  } items-center cursor-pointer flex flex-row justify-between`}
+                >
+                  {item.name} {item.tag === selectedCategory && <FaAngleLeft />}
+                </li>
+              ))}
+            </ul>
+          </li>
+        </ul>
+      </div>
     </>
   );
 }
