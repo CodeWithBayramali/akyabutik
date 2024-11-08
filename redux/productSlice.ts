@@ -1,8 +1,7 @@
 import { createSlice, Dispatch } from "@reduxjs/toolkit";
-import data from '../public/data.json'
-import { Product, ProductFormDataType } from "types";
+import { Product } from "types";
 import { deleteGuardRequest, getRequest, postGuardRequest, putGuardRequest } from "service/requestService";
-import { AxiosError, AxiosResponse } from "axios";
+import { AxiosError } from "axios";
 
 const initialState :{
     products: Product[],
