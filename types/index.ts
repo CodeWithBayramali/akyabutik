@@ -6,7 +6,7 @@ export type Product = {
   category: string;
   colorSize: { weight: string; colorName: string; colorTagName:string; count: number }[];
   sex: string;
-  images: {url:string}[];
+  images: string[];
   description: string;
 };
 
