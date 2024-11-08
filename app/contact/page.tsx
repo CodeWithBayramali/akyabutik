@@ -11,7 +11,7 @@ const dancing_script = Dancing_Script({
   display: "swap",
 });
 
-export default function page() {
+export default function Contact() {
   const dispatch = useDispatch<AppDispatch>();
   const [inputState, setInputState] = useState({
     nameSurname: "",
