@@ -60,6 +60,7 @@ export const authOptions = {
   session: {
     jwt: true
   },
+  secret: process.env.NEXTAUTH_SECRET,
   jwt: {
     encryption: false,
     async encode({ token }) {
