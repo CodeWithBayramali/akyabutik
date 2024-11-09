@@ -46,7 +46,7 @@ export const authOptions = {
       return token; // Güncellenmiş token'ı döndür
     },
     async redirect({ url, baseUrl }) {
-      return url.startsWith(baseUrl) ? '/admin/dashboard' : '/admin/dashboard'; // Yönlendirme
+      return url.startsWith(baseUrl) ? '/admin' : '/admin'; // Yönlendirme
     },
     async session({ session, token }) {
       session.accessToken = token.accessToken; // Session'da accessToken'ı sakla

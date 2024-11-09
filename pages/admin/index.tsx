@@ -9,7 +9,7 @@ import store from '../../redux/store';
 import ProductList from 'components/admin/product-list';
 
 
-export default function Dashboard() {
+export default function index() {
 
   return (
     <div className="flex flex-row bg-[#f9fafb]">
