@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "redux/store";
-import Image from "next/image";
 import { getOrdersDispatch } from "../../redux/orderSlice";
 import { OrderProduct } from "types";
 import { dateConverter } from "util/dateConverter";

@@ -1,10 +1,9 @@
 "use client";
 import { signOut } from "next-auth/react";
-import React, { useState } from "react";
+import React from "react";
 import { RxExit } from "react-icons/rx";
 import { IoHomeOutline, IoListOutline } from "react-icons/io5";
 import { FaBoxesPacking } from "react-icons/fa6";
-import { GrMoney } from "react-icons/gr";
 import Link from "next/link";
 
 
