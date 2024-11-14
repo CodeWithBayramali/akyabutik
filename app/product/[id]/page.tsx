@@ -27,14 +27,29 @@ export default function ProductPage({ params }: { params: { id: string } }) {
     colorTagName: "",
   });
   const [errorState, setErrorState] = useState({ color: false, size: false });
-
+  const [isImageTransitioning, setIsImageTransitioning] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string>();
   // Seçilen bedene göre renkleri filtreleme
   const filteredColors = product?.colorSize.filter(
     (item) => item.weight === stateProduct.size
   );
-
-
+  
+  const handleSelectColorChangeImage = (color:string) => {
+    const foundImage = product?.images.find((imgUrl)=>  imgUrl.split('-').pop()?.split('.').slice(0, -1).join('') === color)
+      setSelectedImage(foundImage)
+      if (selectedImage) {
+        // Efekti başlatmak için kısa bir geçiş ekleyin
+        setIsImageTransitioning(true);
+        const timer = setTimeout(() => {
+          setIsImageTransitioning(false);
+        }, 300); // 300ms geçiş süresi, CSS ile aynı olmalı
+    
+        return () => clearTimeout(timer);
+      }
+  } 
+  
   useEffect(() => {
+    setSelectedImage(product?.images[0])
     dispatch(getProductDispatch(params.id));
   }, [dispatch, params.id]);
 
@@ -71,13 +86,13 @@ export default function ProductPage({ params }: { params: { id: string } }) {
         <div className="grid grid-cols-1 gap-4">
           {/* İlk image tam genişlikte */}
           {product?.images?.[0] && (
-            <div
-              className="relative md:h-[800px] sm:h-[500px] w-full overflow-hidden group border flex 
-            items-center justify-center"
-            >
+           <div
+           className={`relative md:h-[800px] sm:h-[500px] w-full overflow-hidden group border flex items-center justify-center 
+           transition-opacity duration-300 ${isImageTransitioning ? 'opacity-0' : 'opacity-100'}`}
+         >
               <Image
                 className="transition-transform hover:cursor-pointer duration-300 group-hover:scale-125"
-                src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${product?.images[0]}`}
+                src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${selectedImage ? selectedImage : product.images[0]}`}
                 alt="Product Image"
                 layout="fill"
                 objectFit="cover"
@@ -138,7 +153,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                   : "border rounded-full text-sm px-2.5 py-1"
               }`}
             >
-              {item.weight}
+              {item.weight === 'STD' ? 'Standart': item.weight}
             </button>
           ))}
           {errorState.size && (
@@ -160,6 +175,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
               pink: "bg-pink-600",
               stone: "bg-stone-600",
               yellow: "bg-yellow-600",
+              slate: "bg-slate-600"
             };
 
             return (
@@ -173,6 +189,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                       color: item.colorName,
                       colorTagName: item.colorTagName,
                     });
+                    handleSelectColorChangeImage(item.colorName)
                     setErrorState({ ...errorState, color: false });
                   }
                 }}

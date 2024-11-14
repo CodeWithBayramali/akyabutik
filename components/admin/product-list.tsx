@@ -95,16 +95,16 @@ export default function ProductList() {
                     <td className="px-6 py-4 whitespace-nowrap text-end text-xs font-medium">
                       <button
                         onClick={() => toggleModal(item)}
-                        className="text-xs mr-3 text-blue-600"
+                        className="text-xs mr-3 text-white p-1 rounded-lg bg-blue-600"
                       >
-                        Stok Ekle
+                        Stok
                       </button>
                       <button
                         onClick={() => dispatch(deleteProductDispatch(item.id))}
                         type="button"
-                        className="inline-flex items-center gap-x-2 text-xs font-semibold rounded-lg border border-transparent text-red-600 focus:outline-none focus:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400 dark:focus:text-blue-400"
+                        className="inline-flex items-center gap-x-2 text-xs font-semibold rounded-lg border border-transparent text-white focus:outline-none bg-red-600 p-1"
                       >
-                        Delete
+                        Sil
                       </button>
                     </td>
                   </tr>

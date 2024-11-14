@@ -2,6 +2,53 @@
     {
         "name": "Beyaz",
         "tag": "white",
+        "size": "STD"
+    },
+    {
+        "name": "Siyah",
+        "tag": "black",
+        "size": "STD"
+    },
+    {
+        "name": "Mavi",
+        "tag": "blue",
+        "size": "STD"
+    },
+    {
+        "name": "Kırmızı",
+        "tag": "red",
+        "size": "STD"
+    },
+    {
+        "name": "Sarı",
+        "tag": "yellow",
+        "size": "STD"
+    },
+    {
+        "name": "Pembe",
+        "tag": "pink",
+        "size": "STD"
+    },
+    {
+        "name": "Kahverengi",
+        "tag": "stone",
+        "size": "STD"
+    },
+    {
+        "name": "Yeşil",
+        "tag": "green",
+        "size": "STD"
+    },
+    {
+        "name": "Mor",
+        "tag": "purple",
+        "size": "STD"
+    },
+
+
+    {
+        "name": "Beyaz",
+        "tag": "white",
         "size": "XS"
     },
     {
@@ -240,33 +287,63 @@
         "size": "XXL"
     },
     {
-        "name": "Mor",
-        "tag": "purple",
+        "name": "Gri",
+        "tag": "slate",
         "size": "XS"
     },
     {
-        "name": "Mor",
-        "tag": "purple",
+        "name": "Gri",
+        "tag": "slate",
         "size": "S"
     },
     {
-        "name": "Mor",
-        "tag": "purple",
+        "name": "Gri",
+        "tag": "slate",
         "size": "M"
     },
     {
-        "name": "Mor",
-        "tag": "purple",
+        "name": "Gri",
+        "tag": "slate",
         "size": "L"
     },
     {
-        "name": "Mor",
-        "tag": "purple",
+        "name": "Gri",
+        "tag": "slate",
         "size": "XL"
     },
     {
-        "name": "Mor",
-        "tag": "purple",
+        "name": "Gri",
+        "tag": "slate",
+        "size": "XXL"
+    },
+    {
+        "name": "Gri",
+        "tag": "slate",
+        "size": "XS"
+    },
+    {
+        "name": "Gri",
+        "tag": "slate",
+        "size": "S"
+    },
+    {
+        "name": "Gri",
+        "tag": "slate",
+        "size": "M"
+    },
+    {
+        "name": "Gri",
+        "tag": "slate",
+        "size": "L"
+    },
+    {
+        "name": "Gri",
+        "tag": "slate",
+        "size": "XL"
+    },
+    {
+        "name": "Gri",
+        "tag": "slate",
         "size": "XXL"
     }
 ]

@@ -33,36 +33,37 @@ export default function ProductCard({ product }: { product: Product }) {
               const colorClassMap = {
                 white: "bg-white",
                 black: "bg-black",
-                red: "bg-red-500",
-                blue: "bg-blue-500",
-                green: "bg-green-500",
-                pink: "bg-pink-500",
-                stone: "bg-stone-500",
-                yellow: "bg-yellow-500",
+                red: "bg-red-600",
+                blue: "bg-blue-600",
+                green: "bg-green-600",
+                pink: "bg-pink-600",
+                stone: "bg-stone-600",
+                yellow: "bg-yellow-600",
+                slate: "bg-slate-600"
                 // Diğer renkler için gerekli Tailwind sınıflarını ekleyebilirsiniz
               };
         
               return (
-                <button
+                <span
                   key={index}
                   className={`w-5 h-5 border rounded-full ${colorClassMap[colorName as keyof typeof colorClassMap] || "bg-gray-500"}`}
-                ></button>
+                ></span>
               );
             }
           )}
           </div>
-          <div className="flex relative gap-x-2 mt-4 font-semibold flex-row">
+          <div className="flex relative gap-x-2 gap-y-2 mt-4 font-semibold flex-row flex-wrap">
           {[
             ...new Map(
               product?.colorSize?.map((item) => [item.weight, item])
             ).values(),
           ].map((item, index) => (
-            <button
+            <span
               key={index}
               className={`border rounded-full text-xs px-2`}
             >
-              {item.weight}
-            </button>
+              {item.weight === 'STD' ? 'Standart': item.weight}
+            </span>
           ))}
         </div>
         </div>

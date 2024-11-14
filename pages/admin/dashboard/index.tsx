@@ -1,11 +1,11 @@
 import AdminSidebar from 'components/admin/admin-sidebar';
-import '../../app/globals.css'
+import '../../../app/globals.css'
 import { GetServerSidePropsContext } from "next";
 import { getSession } from "next-auth/react";
 import React from "react";
 import CreateProduct from 'components/admin/create-product';
 import { Provider } from 'react-redux';
-import store from '../../redux/store';
+import store from '../../../redux/store';
 import ProductList from 'components/admin/product-list';
 
 

@@ -60,10 +60,28 @@ export type OrderValuesType = {
 }
 
 export type OrderProduct = {
-  product: Product;
-  colorName: string;
-  weight: string;
-  count: number
+  orderProducts: {
+    productId: string;
+    productName: string;
+    imageUrl: string;
+    color: string;
+    size: string;
+    quantity: number
+  }[];
+  totalPrice: number;
+  nameSurname: string;
+  address: {
+    city: string;
+    state: string;
+    apartment: string;
+    zipCode: string;
+    addressDetails: string
+  };
+  phoneNumber: string;
+  email: string;
+  status: string;
+  createdAt: string;
+  id: string;
 }
 
 export type RequestOptions = {

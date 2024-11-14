@@ -12,7 +12,6 @@ import { RootState } from "redux/store";
 import { useSession } from "next-auth/react";
 import { FaWhatsapp } from "react-icons/fa";
 
-
 const dancing_script = Dancing_Script({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -23,9 +22,9 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const [mobile, setMobile] = useState(false);
-  const { data: session } = useSession()
+  const { data: session } = useSession();
 
-  const {cartProducts} = useSelector((state:RootState) => state.cart)
+  const { cartProducts } = useSelector((state: RootState) => state.cart);
   const [isClient, setIsClient] = useState(false);
   const changeNavbarColor = () => {
     if (window.scrollY >= 50) {
@@ -105,10 +104,17 @@ export default function Navbar() {
             </ul>
           </span>
           <div className="flex items-center justify-center gap-x-8">
-            <Link href="https://wa.me/905541471715" target="_blank"><FaWhatsapp size={28} /></Link>
-            {
-              session && <Link href='/admin/dashboard' className="p-2 bg-blue-600 text-white text-xs rounded-lg">Admin</Link>
-            }
+            {session && (
+              <Link
+                href="/admin/dashboard"
+                className="p-2 bg-blue-600 text-white text-xs rounded-lg"
+              >
+                Admin
+              </Link>
+            )}
+            <Link href="https://wa.me/905541471715" target="_blank">
+              <FaWhatsapp size={28} />
+            </Link>
             <button className="relative rounded-lg">
               <FiShoppingCart onClick={toggleModal} size={28} />
               {cartProducts.length !== 0 && (

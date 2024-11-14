@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Beyaz",
+        "tag": "white"
+    },
+    {
+        "name": "Siyah",
+        "tag": "black"
+    },
+    {
+        "name": "Mavi",
+        "tag": "blue"
+    },
+    {
+        "name": "Kırmızı",
+        "tag": "red"
+    },
+    {
+        "name": "Sarı",
+        "tag": "yellow"
+    },
+    {
+        "name": "Pembe",
+        "tag": "pink"
+    },
+    {
+        "name": "Kahverengi",
+        "tag": "stone"
+    },
+    {
+        "name": "Yeşil",
+        "tag": "green"
+    },
+    {
+        "name": "Mor",
+        "tag": "purple"
+    }
+]

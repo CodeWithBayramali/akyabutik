@@ -44,6 +44,26 @@ export default function OpenStockModal({ isOpen, closeModal, colorSize }: OpenSt
     }
   };
 
+  const handleDecreaseStock = () => {
+    if (colorSize) {
+      const newColorSize = colorSize.colorSize.map((item) => {
+        const key = `${item.colorName}-${item.weight}`;
+        const additionalStock = updatedStock[key] || 0;
+        return {
+          ...item,
+          count: Math.max(0, item.count - additionalStock), // Yeni stok güncelleme
+        };
+      });
+      
+      dispatch(updateStockDispatch({
+        ...colorSize,
+        stock: newColorSize.reduce((total,item)=> { return total + Math.max(0, item.count)},0),
+        colorSize: newColorSize
+      }))
+      
+    }
+  }
+
   return (
     <div
       id="modal-overlay"
@@ -77,7 +97,7 @@ export default function OpenStockModal({ isOpen, closeModal, colorSize }: OpenSt
           </svg>
         </button>
         <div className="flex flex-col mt-12 px-4">
-          <h1 className="text-center text-gray-500 text-2xl my-12">Stok Güncelle</h1>
+          <h1 className="text-center text-gray-500 text-2xl my-12">Stok Ekle</h1>
           <div className="flex flex-col gap-y-4">
             {colorSize?.colorSize.map((item, index) => {
               const key = `${item.colorName}-${item.weight}`;
@@ -93,6 +113,29 @@ export default function OpenStockModal({ isOpen, closeModal, colorSize }: OpenSt
                     placeholder="0"
                   />
                   <button onClick={handleUpdateStock} className="bg-blue-600 rounded-lg w-6 h-6 text-white flex items-center justify-center">+</button>
+                </span>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="flex flex-col mt-12 px-4">
+          <h1 className="text-center text-gray-500 text-2xl my-12">Stok Azalt</h1>
+          <div className="flex flex-col gap-y-4">
+            {colorSize?.colorSize.map((item, index) => {
+              const key = `${item.colorName}-${item.weight}`;
+              return (
+                <span key={index} className="flex flex-row items-center justify-between">
+                  <label>
+                    {item.colorName} - {item.weight} : {item.count}
+                  </label>
+                  <input
+                    className="w-16 border outline-none"
+                    type="number"
+                    onChange={(e) => handleInputChange(key, e.target.value)}
+                    placeholder="0"
+                  />
+                  <button onClick={handleDecreaseStock} className="bg-blue-600 rounded-lg w-6 h-6 text-white flex items-center justify-center">-</button>
                 </span>
               );
             })}

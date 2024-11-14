@@ -1,10 +1,11 @@
-'use client'
+"use client";
 import { Formik } from "formik";
 import React, { useState } from "react";
 import { productScheme } from "util/productSchema";
 import { LuUpload } from "react-icons/lu";
 import CurrencyInput from "react-currency-input-field";
 import cat from "../../public/cat.json";
+import jeanSize from "../../public/jeanSize.json";
 import cSize from "../../public/colorSize.json";
 import { FaSquarePlus } from "react-icons/fa6";
 import { useDispatch } from "react-redux";
@@ -12,6 +13,7 @@ import { createProductDispatch } from "../../redux/productSlice";
 import FileResizer from "react-image-file-resizer";
 import { AppDispatch } from "redux/store";
 import { ColorSizeType, ProductFormDataType, ValuesType } from "types";
+import imageColorSelect from "../../public/imageColorSelect.json";
 
 type ImageKey = keyof ImagesState;
 
@@ -27,17 +29,22 @@ interface ViewImageState {
 }
 
 export default function CreateProduct() {
-  const dispatch = useDispatch<AppDispatch>()
+  const dispatch = useDispatch<AppDispatch>();
   const [images, setImages] = useState<ImagesState>({
     img1: null,
     img2: null,
     img3: null,
   });
-  const [viewImages,setViewImages] = useState<ViewImageState>({
+  const [imageColor, setImageColor] = useState<ViewImageState>({
     img1: null,
     img2: null,
     img3: null,
-  })
+  });
+  const [viewImages, setViewImages] = useState<ViewImageState>({
+    img1: null,
+    img2: null,
+    img3: null,
+  });
   const [colorSize, setColorSize] = useState<ColorSizeType[]>([]);
   const [colorSizeInput, setColorSizeInput] = useState<ColorSizeType>({
     weight: "",
@@ -55,62 +62,78 @@ export default function CreateProduct() {
   >([]);
 
   const _handleSubmit = async (values: ValuesType) => {
-
-    if(images.img1 === null || images.img2 === null || images.img3 === null) {
-      return alert('Lütfen resim seçiniz !')
+    if (images.img1 === null || images.img2 === null || images.img3 === null) {
+      return alert("Lütfen resim seçiniz !");
     }
 
     const formData = new FormData();
-  
+
     const resizeAndAppendImages = async () => {
-      const resizePromises = (Object.values(images) as (File | null)[]).map((file) => {
-        if (file) {
-          return new Promise<File>((resolve, reject) => {
-            FileResizer.imageFileResizer(
-              file,
-              600, // genişlik
-              800, // yükseklik
-              'JPEG', // format
-              80, // kalite
-              0, // rotasyon
-              (uri) => {
-                if (uri instanceof File) {
-                  formData.append('image', uri);
-                  resolve(uri);
-                } else {
-                  reject(new Error('Image resizing failed'));
-                }
-              },
-              'file' // çıktı tipi
-            );
-          });
+      const resizePromises = (Object.entries(images) as [string, File | null][]).map(
+        ([key, file]) => {
+          if (file) {
+            return new Promise<File>((resolve, reject) => {
+              FileResizer.imageFileResizer(
+                file,
+                600, // genişlik
+                800, // yükseklik
+                "JPEG", // format
+                80, // kalite
+                0, // rotasyon
+                (uri) => {
+                  if (uri instanceof File) {
+                    // Renkleri `imageColor` state'inden alarak dosya adını güncelleyin
+                    const color = imageColor[key as keyof ViewImageState];
+                    if (color) {
+                      // Dosya adını değiştirin ve yeni bir `File` nesnesi oluşturun
+                      const newFileName = `${file.name.split('.')[0]}-${color}.jpg`;
+                      const updatedFile = new File([uri], newFileName, { type: uri.type });
+                      formData.append("image", updatedFile);
+                      resolve(updatedFile);
+                    } else {
+                      reject(new Error("Color not found for image"));
+                    }
+                  } else {
+                    reject(new Error("Image resizing failed"));
+                  }
+                },
+                "file" // çıktı tipi
+              );
+            });
+          }
+          return Promise.resolve(null);
         }
-        return Promise.resolve(null);
-      });
-  
+      );
+    
       await Promise.all(resizePromises);
     };
 
-    await resizeAndAppendImages()
-  
+    await resizeAndAppendImages();
+
     const productData: ProductFormDataType = {
       name: values.name,
       price: parseFloat(values.price),
-      stock: colorSize.reduce((total,item)=> { return total + item.count;},0),
+      stock: colorSize.reduce((total, item) => {
+        return total + item.count;
+      }, 0),
       sex: values.sex,
       description: values.description,
       colorSize: colorSize,
       mainCategory: catSubCategory.main,
-      subCategory: !catSubCategory.sub ? catSubCategory.main : catSubCategory.sub,
-    }
-  
-    formData.append('productJson', JSON.stringify(productData));
-  
+      subCategory: !catSubCategory.sub
+        ? catSubCategory.main
+        : catSubCategory.sub,
+    };
+
+    formData.append("productJson", JSON.stringify(productData));
+
     dispatch(createProductDispatch(formData));
   };
 
   const handleChangeColorSize = (e: React.FormEvent<HTMLSelectElement>) => {
-    const [colorName, size, colorTagName] = e.currentTarget.value.split(",") as [string,string,string];
+    const [colorName, size, colorTagName] = e.currentTarget.value.split(
+      ","
+    ) as [string, string, string];
     // colorSizeInput'u güncelle
     setColorSizeInput((prev) => ({
       ...prev,
@@ -122,15 +145,14 @@ export default function CreateProduct() {
 
   // colorSizeInput'u colorSize listesine ekleyen fonksiyon
   const handleAddColorSize = () => {
-    if(colorSizeInput.count !== 0) {
+    if (colorSizeInput.count !== 0) {
       setColorSize((prev) => [
         ...prev,
-        colorSizeInput // colorSizeInput'u diziye ekler
+        colorSizeInput, // colorSizeInput'u diziye ekler
       ]);
-    }else {
-      alert('Stok Adet Giriniz !')
+    } else {
+      alert("Stok Adet Giriniz !");
     }
-    
   };
 
   const handleImageChange = (
@@ -169,7 +191,7 @@ export default function CreateProduct() {
       onSubmit={_handleSubmit}
       validationSchema={productScheme}
     >
-      {({ values, handleChange,setFieldValue, handleSubmit }) => (
+      {({ values, handleChange, setFieldValue, handleSubmit }) => (
         <div className="flex flex-col gap-y-6">
           <div className="flex flex-row justify-center space-x-10">
             {(["img1", "img2", "img3"] as (keyof ViewImageState)[]).map(
@@ -199,6 +221,22 @@ export default function CreateProduct() {
                     onChange={(event) => handleImageChange(event, imgKey)}
                     className="hidden"
                   />
+                  <select
+                    onChange={(e) =>
+                      setImageColor({
+                        ...imageColor,
+                        [imgKey]: e.currentTarget.value,
+                      })
+                    }
+                    className="p-1 absolute -bottom-7 border rounded-lg"
+                  >
+                    <option>Renk Seç</option>
+                    {imageColorSelect.map((item, index) => (
+                      <option key={index} value={item.tag}>
+                        {item.name}
+                      </option>
+                    ))}
+                  </select>
                 </div>
               )
             )}
@@ -239,7 +277,11 @@ export default function CreateProduct() {
               >
                 <option defaultChecked>Kategori Seç</option>
                 {cat.map((item, index) => (
-                  <option key={index} value={item.tag} className="text-gray-400">
+                  <option
+                    key={index}
+                    value={item.tag}
+                    className="text-gray-400"
+                  >
                     {item.name}
                   </option>
                 ))}
@@ -257,7 +299,11 @@ export default function CreateProduct() {
               >
                 <option defaultChecked>Alt Kategori Seç</option>
                 {subCategoryList?.map((item, index) => (
-                  <option key={index} value={item.tag} className="text-gray-400">
+                  <option
+                    key={index}
+                    value={item.tag}
+                    className="text-gray-400"
+                  >
                     {item.name}
                   </option>
                 ))}
@@ -266,12 +312,15 @@ export default function CreateProduct() {
           </div>
           <div className="w-full flex flex-col text-sm gap-y-2">
             <label>Cinsiyet</label>
-                <select onChange={(e)=> setFieldValue('sex',e.currentTarget.value)} className="p-2 border rounded-lg">
-                  <option defaultChecked>Cinsiyet Seç</option>
-                  <option value='men'>Erkek</option>
-                  <option value='women'>Kadın</option>
-                  <option value='unisex'>Unisex</option>
-                </select>
+            <select
+              onChange={(e) => setFieldValue("sex", e.currentTarget.value)}
+              className="p-2 border rounded-lg"
+            >
+              <option defaultChecked>Cinsiyet Seç</option>
+              <option value="men">Erkek</option>
+              <option value="women">Kadın</option>
+              <option value="unisex">Unisex</option>
+            </select>
           </div>
           <div className="flex flex-row gap-x-2">
             <select
@@ -279,14 +328,30 @@ export default function CreateProduct() {
               className="border p-2 text-gray-500 text-sm rounded-lg w-3/4"
             >
               <option defaultChecked>Renk ve Beden Seçiniz</option>
-              {cSize.map((item, index) => (
-                <option key={index} value={`${item.tag},${item.size},${item.name}`}>
+              {
+                catSubCategory.sub === 'pantolon' ? (
+                  jeanSize.map((item,index)=> (
+                    <option
+                  key={index}
+                  value={`${item.tag},${item.size},${item.name}`}
+                >
                   {item.name} - {item.size}
                 </option>
-              ))}
+                  ))
+                ): (
+                  cSize.map((item, index) => (
+                    <option
+                      key={index}
+                      value={`${item.tag},${item.size},${item.name}`}
+                    >
+                      {item.name} - {item.size}
+                    </option>
+                  ))
+                )
+              }
             </select>
             <input
-            type="number"
+              type="number"
               value={colorSizeInput?.count}
               required
               onChange={(t) =>
@@ -323,11 +388,10 @@ export default function CreateProduct() {
             />
           </div>
           <div className="p-2 border rounded-lg">
-            Toplam Stok = {
-              colorSize.reduce((total,item)=> {
-                return total + item.count;
-              },0)
-            }
+            Toplam Stok ={" "}
+            {colorSize.reduce((total, item) => {
+              return total + item.count;
+            }, 0)}
           </div>
           <button
             type="submit"
