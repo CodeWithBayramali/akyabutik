@@ -317,33 +317,483 @@
         "size": "XXL"
     },
     {
-        "name": "Gri",
-        "tag": "slate",
+        "name": "Lacivert",
+        "tag": "navyblue",
         "size": "XS"
     },
     {
-        "name": "Gri",
-        "tag": "slate",
+        "name": "Lacivert",
+        "tag": "navyblue",
         "size": "S"
     },
     {
-        "name": "Gri",
-        "tag": "slate",
+        "name": "Lacivert",
+        "tag": "navyblue",
         "size": "M"
     },
     {
-        "name": "Gri",
-        "tag": "slate",
+        "name": "Lacivert",
+        "tag": "navyblue",
         "size": "L"
     },
     {
-        "name": "Gri",
-        "tag": "slate",
+        "name": "Lacivert",
+        "tag": "navyblue",
         "size": "XL"
     },
     {
-        "name": "Gri",
-        "tag": "slate",
+        "name": "Lacivert",
+        "tag": "navyblue",
+        "size": "XXL"
+    },
+    {
+        "name": "Lacivert",
+        "tag": "navyblue",
+        "size": "XS"
+    },
+    {
+        "name": "Lacivert",
+        "tag": "navyblue",
+        "size": "S"
+    },
+    {
+        "name": "Lacivert",
+        "tag": "navyblue",
+        "size": "M"
+    },
+    {
+        "name": "Lacivert",
+        "tag": "navyblue",
+        "size": "L"
+    },
+    {
+        "name": "Lacivert",
+        "tag": "navyblue",
+        "size": "XL"
+    },
+    {
+        "name": "Lacivert",
+        "tag": "navyblue",
+        "size": "XXL"
+    },
+    {
+        "name": "Lacivert",
+        "tag": "navyblue",
+        "size": "XS"
+    },
+    {
+        "name": "Lacivert",
+        "tag": "navyblue",
+        "size": "S"
+    },
+    {
+        "name": "Lacivert",
+        "tag": "navyblue",
+        "size": "M"
+    },
+    {
+        "name": "Lacivert",
+        "tag": "navyblue",
+        "size": "L"
+    },
+    {
+        "name": "Lacivert",
+        "tag": "navyblue",
+        "size": "XL"
+    },
+    {
+        "name": "Lacivert",
+        "tag": "navyblue",
+        "size": "XXL"
+    },
+    {
+        "name": "Bordo",
+        "tag": "maroon",
+        "size": "XS"
+    },
+    {
+        "name": "Bordo",
+        "tag": "maroon",
+        "size": "S"
+    },
+    {
+        "name": "Bordo",
+        "tag": "maroon",
+        "size": "M"
+    },
+    {
+        "name": "Bordo",
+        "tag": "maroon",
+        "size": "L"
+    },
+    {
+        "name": "Bordo",
+        "tag": "maroon",
+        "size": "XL"
+    },
+    {
+        "name": "Bordo",
+        "tag": "maroon",
+        "size": "XXL"
+    },
+    {
+        "name": "Haki Yeşil",
+        "tag": "lime",
+        "size": "XS"
+    },
+    {
+        "name": "Haki Yeşil",
+        "tag": "lime",
+        "size": "S"
+    },
+    {
+        "name": "Haki Yeşil",
+        "tag": "lime",
+        "size": "M"
+    },
+    {
+        "name": "Haki Yeşil",
+        "tag": "lime",
+        "size": "L"
+    },
+    {
+        "name": "Haki Yeşil",
+        "tag": "lime",
+        "size": "XL"
+    },
+    {
+        "name": "Haki Yeşil",
+        "tag": "lime",
+        "size": "XXL"
+    },
+    {
+        "name": "Krem",
+        "tag": "cream",
+        "size": "XS"
+    },
+    {
+        "name": "Krem",
+        "tag": "cream",
+        "size": "S"
+    },
+    {
+        "name": "Krem",
+        "tag": "cream",
+        "size": "M"
+    },
+    {
+        "name": "Krem",
+        "tag": "cream",
+        "size": "L"
+    },
+    {
+        "name": "Krem",
+        "tag": "cream",
+        "size": "XL"
+    },
+    {
+        "name": "Krem",
+        "tag": "cream",
+        "size": "XXL"
+    },
+    {
+        "name": "Bej",
+        "tag": "bej",
+        "size": "XS"
+    },
+    {
+        "name": "Bej",
+        "tag": "bej",
+        "size": "S"
+    },
+    {
+        "name": "Bej",
+        "tag": "bej",
+        "size": "M"
+    },
+    {
+        "name": "Bej",
+        "tag": "bej",
+        "size": "L"
+    },
+    {
+        "name": "Bej",
+        "tag": "bej",
+        "size": "XL"
+    },
+    {
+        "name": "Bej",
+        "tag": "bej",
+        "size": "XXL"
+    },
+    {
+        "name": "Ekru",
+        "tag": "ekru",
+        "size": "XS"
+    },
+    {
+        "name": "Ekru",
+        "tag": "ekru",
+        "size": "S"
+    },
+    {
+        "name": "Ekru",
+        "tag": "ekru",
+        "size": "M"
+    },
+    {
+        "name": "Ekru",
+        "tag": "ekru",
+        "size": "L"
+    },
+    {
+        "name": "Ekru",
+        "tag": "ekru",
+        "size": "XL"
+    },
+    {
+        "name": "Ekru",
+        "tag": "ekru",
+        "size": "XXL"
+    },
+    {
+        "name": "Vizon",
+        "tag": "vizon",
+        "size": "XS"
+    },
+    {
+        "name": "Vizon",
+        "tag": "vizon",
+        "size": "S"
+    },
+    {
+        "name": "Vizon",
+        "tag": "vizon",
+        "size": "M"
+    },
+    {
+        "name": "Vizon",
+        "tag": "vizon",
+        "size": "L"
+    },
+    {
+        "name": "Vizon",
+        "tag": "vizon",
+        "size": "XL"
+    },
+    {
+        "name": "Vizon",
+        "tag": "vizon",
+        "size": "XXL"
+    },
+    {
+        "name": "Nar Çiçeği",
+        "tag": "nar",
+        "size": "XS"
+    },
+    {
+        "name": "Nar Çiçeği",
+        "tag": "nar",
+        "size": "S"
+    },
+    {
+        "name": "Nar Çiçeği",
+        "tag": "nar",
+        "size": "M"
+    },
+    {
+        "name": "Nar Çiçeği",
+        "tag": "nar",
+        "size": "L"
+    },
+    {
+        "name": "Nar Çiçeği",
+        "tag": "nar",
+        "size": "XL"
+    },
+    {
+        "name": "Nar Çiçeği",
+        "tag": "nar",
+        "size": "XXL"
+    },
+    {
+        "name": "Antrasit",
+        "tag": "antrasit",
+        "size": "XS"
+    },
+    {
+        "name": "Antrasit",
+        "tag": "antrasit",
+        "size": "S"
+    },
+    {
+        "name": "Antrasit",
+        "tag": "antrasit",
+        "size": "M"
+    },
+    {
+        "name": "Antrasit",
+        "tag": "antrasit",
+        "size": "L"
+    },
+    {
+        "name": "Antrasit",
+        "tag": "antrasit",
+        "size": "XL"
+    },
+    {
+        "name": "Antrasit",
+        "tag": "antrasit",
+        "size": "XXL"
+    },
+    {
+        "name": "Taba",
+        "tag": "taba",
+        "size": "XS"
+    },
+    {
+        "name": "Taba",
+        "tag": "taba",
+        "size": "S"
+    },
+    {
+        "name": "Taba",
+        "tag": "taba",
+        "size": "M"
+    },
+    {
+        "name": "Taba",
+        "tag": "taba",
+        "size": "L"
+    },
+    {
+        "name": "Taba",
+        "tag": "taba",
+        "size": "XL"
+    },
+    {
+        "name": "Taba",
+        "tag": "taba",
+        "size": "XXL"
+    },
+    {
+        "name": "Yağ Yeşili",
+        "tag": "yagy",
+        "size": "XS"
+    },
+    {
+        "name": "Yağ Yeşili",
+        "tag": "yagy",
+        "size": "S"
+    },
+    {
+        "name": "Yağ Yeşili",
+        "tag": "yagy",
+        "size": "M"
+    },
+    {
+        "name": "Yağ Yeşili",
+        "tag": "yagy",
+        "size": "L"
+    },
+    {
+        "name": "Yağ Yeşili",
+        "tag": "yagy",
+        "size": "XL"
+    },
+    {
+        "name": "Yağ Yeşili",
+        "tag": "yagy",
+        "size": "XXL"
+    },
+    {
+        "name": "Fusia",
+        "tag": "fusia",
+        "size": "XS"
+    },
+    {
+        "name": "Fusia",
+        "tag": "fusia",
+        "size": "S"
+    },
+    {
+        "name": "Fusia",
+        "tag": "fusia",
+        "size": "M"
+    },
+    {
+        "name": "Fusia",
+        "tag": "fusia",
+        "size": "L"
+    },
+    {
+        "name": "Fusia",
+        "tag": "fusia",
+        "size": "XL"
+    },
+    {
+        "name": "Fusia",
+        "tag": "fusia",
+        "size": "XXL"
+    },
+    {
+        "name": "Lila",
+        "tag": "lila",
+        "size": "XS"
+    },
+    {
+        "name": "Lila",
+        "tag": "lila",
+        "size": "S"
+    },
+    {
+        "name": "Lila",
+        "tag": "lila",
+        "size": "M"
+    },
+    {
+        "name": "Lila",
+        "tag": "lila",
+        "size": "L"
+    },
+    {
+        "name": "Lila",
+        "tag": "lila",
+        "size": "XL"
+    },
+    {
+        "name": "Lila",
+        "tag": "lila",
+        "size": "XXL"
+    },
+    {
+        "name": "Turuncu",
+        "tag": "orange",
+        "size": "XS"
+    },
+    {
+        "name": "Turuncu",
+        "tag": "orange",
+        "size": "S"
+    },
+    {
+        "name": "Turuncu",
+        "tag": "orange",
+        "size": "M"
+    },
+    {
+        "name": "Turuncu",
+        "tag": "orange",
+        "size": "L"
+    },
+    {
+        "name": "Turuncu",
+        "tag": "orange",
+        "size": "XL"
+    },
+    {
+        "name": "Turuncu",
+        "tag": "orange",
         "size": "XXL"
     }
 ]

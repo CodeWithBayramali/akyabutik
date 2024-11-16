@@ -32,7 +32,63 @@
         "tag": "green"
     },
     {
+        "name": "Lacivert",
+        "tag": "navyblue"
+    },
+    {
         "name": "Mor",
         "tag": "purple"
+    },
+    {
+        "name": "Bordo",
+        "tag": "maroon"
+    },
+    {
+        "name": "Haki Yeşil",
+        "tag": "lime"
+    },
+    {
+        "name": "Krem",
+        "tag": "cream"
+    },
+    {
+        "name": "Bej",
+        "tag": "bej"
+    },
+    {
+        "name": "Ekru",
+        "tag": "ekru"
+    },
+    {
+        "name": "Vizon",
+        "tag": "vizon"
+    },
+    {
+        "name": "Nar Çiçeği",
+        "tag": "nar"
+    },
+    {
+        "name": "Antrasit",
+        "tag": "antrasit"
+    },
+    {
+        "name": "Taba",
+        "tag": "taba"
+    },
+    {
+        "name": "Yağ Yeşili",
+        "tag": "yagy"
+    },
+    {
+        "name": "Fusia",
+        "tag": "fusia"
+    },
+    {
+        "name": "Lila",
+        "tag": "lila"
+    },
+    {
+        "name": "Turuncu",
+        "tag": "orange"
     }
 ]
