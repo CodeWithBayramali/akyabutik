@@ -49,9 +49,16 @@ export default function ProductPage({ params }: { params: { id: string } }) {
   } 
   
   useEffect(() => {
-    setSelectedImage(product?.images[0])
+    // Ürün verisini çek
     dispatch(getProductDispatch(params.id));
   }, [dispatch, params.id]);
+  
+  useEffect(() => {
+    // product değiştiğinde ve images varsa ilk resmi ayarla
+    if (product && product.images.length > 0) {
+      setSelectedImage(product.images[0]);
+    }
+  }, [product]);
 
   const handleSendProductToCart = () => {
     if (!stateProduct.color)
